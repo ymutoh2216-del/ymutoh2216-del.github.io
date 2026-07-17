@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>おまかせHP制作室 | 中小企業・個人店のホームページ制作</title>
+<meta name="description" content="工務店・美容室・花屋・カフェなど中小企業・個人店様向けにホームページを制作しています。公開後の更新代行つき。実績サンプルを多数ご用意しています。">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          heading: ['"Zen Kaku Gothic New"', 'sans-serif'],
+          body: ['"Noto Sans JP"', 'sans-serif'],
+        },
+        colors: {
+          ink: '#1B2430',
+          cream: '#FAF6F0',
+          accent: '#CC7A4B',
+          accentSoft: '#F2E3D5',
+          muted: '#6B7280',
+        }
+      }
+    }
+  }
+</script>
+
+<style>
+  html { scroll-behavior: smooth; }
+  body { background-color: #FAF6F0; }
+  .card-shadow { box-shadow: 0 10px 30px -12px rgba(27,36,48,0.15); }
+</style>
+</head>
+<body class="font-body text-ink antialiased">
+
+  <!-- Nav -->
+  <header class="sticky top-0 z-40 bg-cream/90 backdrop-blur border-b border-ink/10">
+    <div class="max-w-6xl mx-auto px-5 md:px-8 h-16 flex items-center justify-between">
+      <a href="#top" class="font-heading font-bold text-lg tracking-tight">おまかせ<span class="text-accent">HP</span>制作室</a>
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <a href="#service" class="hover:text-accent transition-colors">サービス</a>
+        <a href="#works" class="hover:text-accent transition-colors">実績サンプル</a>
+        <a href="#pricing" class="hover:text-accent transition-colors">料金</a>
+        <a href="#flow" class="hover:text-accent transition-colors">お申し込みの流れ</a>
+      </nav>
+      <a href="#contact" class="inline-flex items-center gap-2 bg-ink text-cream text-sm font-medium px-5 py-2.5 rounded-full hover:bg-accent transition-colors">
+        お問い合わせ <i class="ph ph-arrow-right"></i>
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="top" class="max-w-6xl mx-auto px-5 md:px-8 pt-16 pb-20 md:pt-24 md:pb-28">
+    <p class="text-accent font-semibold tracking-widest text-sm mb-6">中小企業・個人店様向け ホームページ制作</p>
+    <h1 class="font-heading font-black text-4xl md:text-6xl leading-[1.3] max-w-3xl mb-8">
+      「作ったはいいけど、<br>更新できない」を、<br>なくす。
+    </h1>
+    <p class="text-muted text-base md:text-lg max-w-xl leading-loose mb-10">
+      工務店・美容室・花屋・カフェなど、更新頻度の低い業種に特化してホームページを制作しています。
+      公開後の文章・写真の差し替えもすべてお任せいただけるので、経営者様は本業に集中していただけます。
+      まずは実績サンプルをご覧ください。
+    </p>
+    <div class="flex flex-wrap gap-4">
+      <a href="#works" class="inline-flex items-center gap-2 bg-ink text-cream font-medium px-7 py-3.5 rounded-full hover:bg-accent transition-colors">
+        実績サンプルを見る <i class="ph ph-arrow-right"></i>
+      </a>
+      <a href="#omakase-set" class="inline-flex items-center gap-2 border border-ink/20 font-medium px-7 py-3.5 rounded-full hover:border-accent hover:text-accent transition-colors">
+        新プラン「HPおまかせセット」とは
+      </a>
+    </div>
+  </section>
+
+  <!-- Service overview -->
+  <section id="service" class="bg-ink text-cream py-20 md:py-28">
+    <div class="max-w-6xl mx-auto px-5 md:px-8">
+      <p class="text-accent font-semibold tracking-widest text-sm mb-4">SERVICE</p>
+      <h2 class="font-heading font-bold text-2xl md:text-4xl mb-14 max-w-2xl">ご予算・進め方に合わせて、3つの入り口をご用意しています。</h2>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-cream/5 border border-cream/15 rounded-2xl p-8 flex flex-col">
+          <span class="text-accent text-xs font-semibold tracking-widest mb-4">01</span>
+          <h3 class="font-heading font-bold text-xl mb-3">丸ごとお任せプラン</h3>
+          <p class="text-cream/70 text-sm leading-relaxed mb-8 flex-1">ヒアリングからデザイン・公開まで、すべてこちらで制作します。公開後の更新代行もセットで、経営者様は本業に集中いただけます。</p>
+          <a href="#pricing" class="inline-flex items-center gap-2 text-sm font-medium text-accent hover:gap-3 transition-all">料金を見る <i class="ph ph-arrow-right"></i></a>
+        </div>
+        <div class="bg-accent/10 border border-accent/40 rounded-2xl p-8 flex flex-col relative">
+          <span class="absolute -top-3 right-6 bg-accent text-ink text-[11px] font-bold px-3 py-1 rounded-full">NEW</span>
+          <span class="text-accent text-xs font-semibold tracking-widest mb-4">02</span>
+          <h3 class="font-heading font-bold text-xl mb-3">HPおまかせセット</h3>
+          <p class="text-cream/70 text-sm leading-relaxed mb-8 flex-1">お店専用にカスタマイズしたホームページ一式と、公開までの手順書をセットでお渡しします。ご自身のペースで進めたい方に。分からない箇所は個別サポートも可能です。</p>
+          <a href="#omakase-set" class="inline-flex items-center gap-2 text-sm font-medium text-accent hover:gap-3 transition-all">くわしく見る <i class="ph ph-arrow-right"></i></a>
+        </div>
+        <div class="bg-cream/5 border border-cream/15 rounded-2xl p-8 flex flex-col">
+          <span class="text-accent text-xs font-semibold tracking-widest mb-4">03</span>
+          <h3 class="font-heading font-bold text-xl mb-3">修正代行・月額保守</h3>
+          <p class="text-cream/70 text-sm leading-relaxed mb-8 flex-1">公開後の文言修正・写真差し替え・レイアウト変更を、単発または月額プランで承ります。頻繁に更新したい方には月額がお得です。</p>
+          <a href="#pricing" class="inline-flex items-center gap-2 text-sm font-medium text-accent hover:gap-3 transition-all">料金を見る <i class="ph ph-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section id="works" class="max-w-6xl mx-auto px-5 md:px-8 py-20 md:py-28">
+    <p class="text-accent font-semibold tracking-widest text-sm mb-4">WORKS</p>
+    <h2 class="font-heading font-bold text-2xl md:text-4xl mb-4">実績サンプル</h2>
+    <p class="text-muted mb-14 max-w-xl leading-relaxed">業種ごとのモックアップサイトです。実際にクリック・スクロールしてご覧いただけます(いずれも架空の実績サンプルです)。</p>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <a href="samples/koumuten/index.html" target="_blank" rel="noopener" class="group block rounded-2xl overflow-hidden card-shadow bg-white">
+        <div class="aspect-[4/3] overflow-hidden">
+          <img src="samples/koumuten/杜の工務店・緑の動画背景部分.png" alt="杜の工務店のサイトサンプル" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        </div>
+        <div class="p-6">
+          <span class="text-xs font-semibold text-accent tracking-widest">工務店・リフォーム業</span>
+          <h3 class="font-heading font-bold text-lg mt-2 mb-2">杜の工務店</h3>
+          <p class="text-sm text-muted leading-relaxed">地域密着の強みが伝わるよう施工実績・お客様の声を前面に構成。TOPは動画背景で差別化。</p>
+        </div>
+      </a>
+
+      <a href="samples/salon/index.html" target="_blank" rel="noopener" class="group block rounded-2xl overflow-hidden card-shadow bg-white">
+        <div class="aspect-[4/3] overflow-hidden">
+          <img src="samples/salon/hair salon Nagi・黒背景部分.png" alt="hair salon Nagiのサイトサンプル" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        </div>
+        <div class="p-6">
+          <span class="text-xs font-semibold text-accent tracking-widest">美容室</span>
+          <h3 class="font-heading font-bold text-lg mt-2 mb-2">hair salon Nagi</h3>
+          <p class="text-sm text-muted leading-relaxed">完全予約制サロンに合わせ、黒×ゴールドの高級感あるデザインに。予約導線もシンプルに設計。</p>
+        </div>
+      </a>
+
+      <a href="samples/hanaya/index.html" target="_blank" rel="noopener" class="group block rounded-2xl overflow-hidden card-shadow bg-white">
+        <div class="aspect-[4/3] overflow-hidden">
+          <img src="samples/hanaya/花と実・クリーム背景部分.png" alt="花と実のサイトサンプル" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        </div>
+        <div class="p-6">
+          <span class="text-xs font-semibold text-accent tracking-widest">花屋</span>
+          <h3 class="font-heading font-bold text-lg mt-2 mb-2">花と実 -hana to mi-</h3>
+          <p class="text-sm text-muted leading-relaxed">クリーム×セージの優しい配色で、季節の花や店内の雰囲気を魅力的に見せるデザイン。</p>
+        </div>
+      </a>
+
+      <a href="samples/cafe-komorebi/index.html" target="_blank" rel="noopener" class="group block rounded-2xl overflow-hidden card-shadow bg-white">
+        <div class="aspect-[4/3] overflow-hidden">
+          <img src="samples/cafe-komorebi/こもれび・ブラウン背景部分.png" alt="喫茶とパン こもれびのサイトサンプル" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        </div>
+        <div class="p-6">
+          <span class="text-xs font-semibold text-accent tracking-widest">カフェ</span>
+          <h3 class="font-heading font-bold text-lg mt-2 mb-2">喫茶とパン こもれび</h3>
+          <p class="text-sm text-muted leading-relaxed">ブラウン系の落ち着いた配色で、焼きたてパンとコーヒーのあたたかみを表現。</p>
+        </div>
+      </a>
+
+      <a href="samples/cafe-kozue/index.html" target="_blank" rel="noopener" class="group block rounded-2xl overflow-hidden card-shadow bg-white sm:col-span-2 lg:col-span-1">
+        <div class="aspect-[4/3] overflow-hidden">
+          <img src="samples/cafe-kozue/梢-KOZUE-・木目とラテ背景部分.png" alt="梢-KOZUE-のサイトサンプル" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        </div>
+        <div class="p-6">
+          <span class="text-xs font-semibold text-accent tracking-widest">カフェ(自由が丘・高級路線)</span>
+          <h3 class="font-heading font-bold text-lg mt-2 mb-2">梢 -KOZUE-</h3>
+          <p class="text-sm text-muted leading-relaxed">日本語タイポグラフィにこだわった最新作。エディトリアルな余白づかいで高級感を演出。</p>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- HPおまかせセット detail -->
+  <section id="omakase-set" class="bg-accentSoft py-20 md:py-28">
+    <div class="max-w-6xl mx-auto px-5 md:px-8 grid md:grid-cols-2 gap-14 items-start">
+      <div>
+        <p class="text-accent font-semibold tracking-widest text-sm mb-4">NEW PLAN</p>
+        <h2 class="font-heading font-bold text-2xl md:text-4xl mb-6">HPおまかせセット</h2>
+        <p class="text-ink/70 leading-loose mb-8">
+          お店専用にカスタマイズしたホームページ一式(HTML/CSS、スマホ対応済み)と、公開までの手順書をセットでお渡しするプランです。
+          ご自身のペースで公開作業を進めていただき、手順書を見ても分からない箇所が出てきた場合は、個別に有料でこちらが手直し・代行します。
+        </p>
+        <div class="bg-white rounded-2xl p-8 card-shadow mb-8">
+          <p class="font-heading font-bold text-3xl mb-1">¥38,000<span class="text-base font-medium text-muted">〜</span></p>
+          <p class="text-sm text-muted">業種・ページ数により変動します</p>
+        </div>
+        <ul class="space-y-3 text-sm">
+          <li class="flex gap-3"><i class="ph ph-check-circle text-accent text-lg shrink-0 mt-0.5"></i>貴店専用にカスタマイズしたホームページ一式(HTML/CSS)</li>
+          <li class="flex gap-3"><i class="ph ph-check-circle text-accent text-lg shrink-0 mt-0.5"></i>公開までの手順書(サーバー契約・ドメイン取得・アップロード方法)</li>
+          <li class="flex gap-3"><i class="ph ph-check-circle text-accent text-lg shrink-0 mt-0.5"></i>分からない箇所の個別サポート(有料・下記「修正代行」と同一料金)</li>
+        </ul>
+      </div>
+      <div class="bg-white rounded-2xl p-8 md:p-10 card-shadow">
+        <h3 class="font-heading font-bold text-lg mb-6">こんな方におすすめです</h3>
+        <ul class="space-y-4 text-sm text-ink/80 mb-10">
+          <li class="flex gap-3"><i class="ph ph-arrow-right text-accent shrink-0 mt-0.5"></i>まずは予算を抑えて形にしてみたい</li>
+          <li class="flex gap-3"><i class="ph ph-arrow-right text-accent shrink-0 mt-0.5"></i>公開作業は自分のペースで進めたい</li>
+          <li class="flex gap-3"><i class="ph ph-arrow-right text-accent shrink-0 mt-0.5"></i>詰まったときだけプロに頼りたい</li>
+        </ul>
+        <div class="border-t border-ink/10 pt-6">
+          <p class="text-xs text-muted leading-relaxed mb-6">
+            ※専門知識がまったくない場合や、公開後の更新もすべて任せたい場合は「丸ごとお任せプラン」がおすすめです。
+          </p>
+          <a href="#contact" class="inline-flex items-center gap-2 bg-ink text-cream font-medium px-6 py-3 rounded-full hover:bg-accent transition-colors w-full justify-center">
+            このプランで相談する <i class="ph ph-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="max-w-6xl mx-auto px-5 md:px-8 py-20 md:py-28">
+    <p class="text-accent font-semibold tracking-widest text-sm mb-4">PRICING</p>
+    <h2 class="font-heading font-bold text-2xl md:text-4xl mb-14">料金・サービス案内</h2>
+
+    <div class="grid md:grid-cols-2 gap-x-12 gap-y-14">
+      <div>
+        <h3 class="font-heading font-bold text-lg mb-5">1. サイト制作プラン(丸ごとお任せ)</h3>
+        <div class="overflow-x-auto rounded-xl border border-ink/10">
+          <table class="w-full text-sm">
+            <thead class="bg-ink text-cream"><tr>
+              <th class="text-left font-medium px-4 py-3">プラン</th>
+              <th class="text-left font-medium px-4 py-3">ページ構成</th>
+              <th class="text-left font-medium px-4 py-3">料金目安</th>
+            </tr></thead>
+            <tbody class="divide-y divide-ink/10 bg-white">
+              <tr><td class="px-4 py-3">ライト</td><td class="px-4 py-3 text-muted">1ページ(LP形式)</td><td class="px-4 py-3">50,000円〜</td></tr>
+              <tr><td class="px-4 py-3">スタンダード</td><td class="px-4 py-3 text-muted">5ページ程度</td><td class="px-4 py-3">150,000円〜</td></tr>
+              <tr><td class="px-4 py-3">プレミアム</td><td class="px-4 py-3 text-muted">スタンダード+動画・演出込み</td><td class="px-4 py-3">200,000円〜</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-xs text-muted mt-3">※初回モニター価格として、実績紹介にご協力いただける場合は特別価格をご案内できます。</p>
+      </div>
+
+      <div>
+        <h3 class="font-heading font-bold text-lg mb-5">2. HPおまかせセット(新プラン)</h3>
+        <div class="overflow-x-auto rounded-xl border border-ink/10">
+          <table class="w-full text-sm">
+            <thead class="bg-ink text-cream"><tr>
+              <th class="text-left font-medium px-4 py-3">内容</th>
+              <th class="text-left font-medium px-4 py-3">料金目安</th>
+            </tr></thead>
+            <tbody class="divide-y divide-ink/10 bg-white">
+              <tr><td class="px-4 py-3">HP一式+公開手順書</td><td class="px-4 py-3">38,000円〜</td></tr>
+              <tr><td class="px-4 py-3" colspan="2"><span class="text-muted text-xs">分からない箇所の個別サポートは、右の「修正代行」料金が適用されます</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="font-heading font-bold text-lg mb-5">3. 公開後の修正代行(単発)</h3>
+        <div class="overflow-x-auto rounded-xl border border-ink/10">
+          <table class="w-full text-sm">
+            <thead class="bg-ink text-cream"><tr>
+              <th class="text-left font-medium px-4 py-3">内容</th>
+              <th class="text-left font-medium px-4 py-3">料金</th>
+            </tr></thead>
+            <tbody class="divide-y divide-ink/10 bg-white">
+              <tr><td class="px-4 py-3">文言修正(1箇所)</td><td class="px-4 py-3">3,000円〜</td></tr>
+              <tr><td class="px-4 py-3">写真の差し替え</td><td class="px-4 py-3">5,000円〜</td></tr>
+              <tr><td class="px-4 py-3">セクション追加・レイアウト変更</td><td class="px-4 py-3">10,000円〜</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-xs text-muted mt-3">対応目安: ご依頼から2営業日以内に着手いたします。</p>
+      </div>
+
+      <div>
+        <h3 class="font-heading font-bold text-lg mb-5">4. 月額プラン(修正代行込み・おすすめ)</h3>
+        <div class="overflow-x-auto rounded-xl border border-ink/10">
+          <table class="w-full text-sm">
+            <thead class="bg-ink text-cream"><tr>
+              <th class="text-left font-medium px-4 py-3">プラン</th>
+              <th class="text-left font-medium px-4 py-3">内容</th>
+              <th class="text-left font-medium px-4 py-3">料金</th>
+            </tr></thead>
+            <tbody class="divide-y divide-ink/10 bg-white">
+              <tr><td class="px-4 py-3">保守ライト</td><td class="px-4 py-3 text-muted">サーバー・ドメイン管理のみ</td><td class="px-4 py-3">3,000円/月</td></tr>
+              <tr><td class="px-4 py-3">保守スタンダード</td><td class="px-4 py-3 text-muted">管理+月2回まで軽微な修正込み</td><td class="px-4 py-3">5,000〜8,000円/月</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Flow -->
+  <section id="flow" class="bg-ink text-cream py-20 md:py-28">
+    <div class="max-w-6xl mx-auto px-5 md:px-8">
+      <p class="text-accent font-semibold tracking-widest text-sm mb-4">FLOW</p>
+      <h2 class="font-heading font-bold text-2xl md:text-4xl mb-14">お申し込みの流れ</h2>
+      <div class="grid md:grid-cols-5 gap-6">
+        <div><span class="text-accent font-heading font-bold text-3xl">01</span><p class="mt-4 text-sm text-cream/80 leading-relaxed">無料相談<br>貴社名を入れた簡易サンプルを無料で作成してご提案</p></div>
+        <div><span class="text-accent font-heading font-bold text-3xl">02</span><p class="mt-4 text-sm text-cream/80 leading-relaxed">ヒアリング<br>お見積もり提出</p></div>
+        <div><span class="text-accent font-heading font-bold text-3xl">03</span><p class="mt-4 text-sm text-cream/80 leading-relaxed">ご契約<br>制作開始</p></div>
+        <div><span class="text-accent font-heading font-bold text-3xl">04</span><p class="mt-4 text-sm text-cream/80 leading-relaxed">公開</p></div>
+        <div><span class="text-accent font-heading font-bold text-3xl">05</span><p class="mt-4 text-sm text-cream/80 leading-relaxed">アフターフォロー<br>修正代行 or 月額プランのご案内</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="max-w-6xl mx-auto px-5 md:px-8 py-20 md:py-28 text-center">
+    <p class="text-accent font-semibold tracking-widest text-sm mb-4">CONTACT</p>
+    <h2 class="font-heading font-bold text-2xl md:text-4xl mb-6">まずはお気軽にご相談ください</h2>
+    <p class="text-muted max-w-lg mx-auto leading-relaxed mb-10">貴社名を入れた無料モックアップのご提案から承っています。メール・SNSどちらからでもお気軽にどうぞ。</p>
+    <div class="flex flex-wrap justify-center gap-4">
+      <a href="mailto:omakasehp.seisaku@gmail.com" class="inline-flex items-center gap-2 bg-ink text-cream font-medium px-7 py-3.5 rounded-full hover:bg-accent transition-colors">
+        <i class="ph ph-envelope-simple"></i> メールで相談する
+      </a>
+      <a href="https://x.com/omakase_hp" target="_blank" rel="noopener" class="inline-flex items-center gap-2 border border-ink/20 font-medium px-7 py-3.5 rounded-full hover:border-accent hover:text-accent transition-colors">
+        <i class="ph ph-x-logo"></i> X (@omakase_hp)
+      </a>
+      <a href="https://www.instagram.com/omakasehp.seisaku/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 border border-ink/20 font-medium px-7 py-3.5 rounded-full hover:border-accent hover:text-accent transition-colors">
+        <i class="ph ph-instagram-logo"></i> Instagram
+      </a>
+    </div>
+  </section>
+
+  <footer class="border-t border-ink/10 py-10">
+    <div class="max-w-6xl mx-auto px-5 md:px-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted">
+      <p class="font-heading font-bold text-ink">おまかせHP制作室</p>
+      <p>&copy; 2026 おまかせHP制作室</p>
+    </div>
+  </footer>
+
+</body>
+</html>

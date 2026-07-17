@@ -1,0 +1,193 @@
+:root {
+  --color-bg: #0e0e0e;
+  --color-panel: #171717;
+  --color-gold: #c9a24b;
+  --color-text: #f2ede3;
+  --color-text-dim: #b5aea0;
+  --font-base: "Hiragino Mincho ProN", "Yu Mincho", "Hiragino Sans", serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-base);
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.9;
+}
+
+a { color: inherit; text-decoration: none; }
+img, .ph-box { max-width: 100%; display: block; }
+
+.container { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+
+/* header */
+.site-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 20px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(14,14,14,0.6);
+  backdrop-filter: blur(6px);
+}
+
+.logo {
+  font-size: 1.3rem;
+  letter-spacing: 0.3em;
+  color: var(--color-gold);
+}
+
+.nav-list { display: flex; gap: 32px; list-style: none; font-size: 0.85rem; letter-spacing: 0.1em; }
+.nav-list a:hover { color: var(--color-gold); }
+
+/* hero */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 640px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 30%, #262019 0%, #0e0e0e 70%);
+}
+
+.hero-inner { position: relative; z-index: 2; }
+
+.hero .eyebrow {
+  display: block;
+  letter-spacing: 0.4em;
+  color: var(--color-gold);
+  font-size: 0.8rem;
+  margin-bottom: 24px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  letter-spacing: 0.15em;
+  margin-bottom: 24px;
+}
+
+.hero p { color: var(--color-text-dim); margin-bottom: 40px; letter-spacing: 0.05em; }
+
+.btn {
+  display: inline-block;
+  padding: 16px 48px;
+  border: 1px solid var(--color-gold);
+  color: var(--color-gold);
+  letter-spacing: 0.2em;
+  font-size: 0.85rem;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.btn:hover { background: var(--color-gold); color: #0e0e0e; }
+
+.btn-solid { background: var(--color-gold); color: #0e0e0e; }
+.btn-solid:hover { background: transparent; color: var(--color-gold); }
+
+/* sections */
+section { padding: 120px 0; }
+
+.section-eyebrow {
+  display: block;
+  text-align: center;
+  letter-spacing: 0.4em;
+  color: var(--color-gold);
+  font-size: 0.75rem;
+  margin-bottom: 16px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 64px;
+}
+
+/* concept */
+.concept-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.concept-grid p { color: var(--color-text-dim); }
+
+/* placeholder photo */
+.ph-box {
+  width: 100%;
+  height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gold);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  background: linear-gradient(135deg, #24201a, #3a3226);
+  border: 1px solid #3a3226;
+}
+
+/* menu table */
+.menu-list { max-width: 640px; margin: 0 auto; }
+
+.menu-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.menu-row .name { letter-spacing: 0.05em; }
+.menu-row .desc { color: var(--color-text-dim); font-size: 0.8rem; margin-top: 4px; }
+.menu-row .price { color: var(--color-gold); white-space: nowrap; padding-left: 24px; }
+
+/* stylists */
+.staff-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.staff-card { text-align: center; }
+.staff-card .name { margin-top: 16px; letter-spacing: 0.1em; }
+.staff-card .role { color: var(--color-gold); font-size: 0.8rem; margin-top: 4px; }
+
+/* gallery */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.gallery-grid .ph-box { height: 220px; }
+
+/* access */
+.access-box {
+  max-width: 560px;
+  margin: 0 auto;
+  text-align: center;
+  color: var(--color-text-dim);
+}
+
+.access-box .gold { color: var(--color-gold); }
+
+/* footer */
+.site-footer {
+  text-align: center;
+  padding: 48px 24px;
+  border-top: 1px solid #222;
+  color: #777;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+}
+
+@media (max-width: 768px) {
+  .nav-list { display: none; }
+  .hero h1 { font-size: 2rem; }
+  .concept-grid, .staff-grid, .gallery-grid { grid-template-columns: 1fr; }
+}

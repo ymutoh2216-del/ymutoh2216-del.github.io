@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>お問い合わせ｜杜の工務店</title>
+<meta name="description" content="新築・リフォームのご相談、無料お見積もりのご依頼はこちらのフォームからお気軽にどうぞ。">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="logo">杜<span>の</span>工務店</div>
+    <ul class="nav-list">
+      <li><a href="index.html">TOP</a></li>
+      <li><a href="service.html">事業内容</a></li>
+      <li><a href="about.html">会社概要</a></li>
+      <li><a href="works.html">施工実績</a></li>
+      <li><a href="contact.html">お問い合わせ</a></li>
+    </ul>
+    <div class="header-tel">
+      <small>お電話でのご相談</small>
+      0120-000-000
+    </div>
+  </div>
+</header>
+
+<div class="page-header">
+  <h1>お問い合わせ</h1>
+</div>
+
+<div class="container">
+  <p class="breadcrumb"><a href="index.html">TOP</a> ＞ お問い合わせ</p>
+</div>
+
+<section>
+  <div class="container" style="max-width:720px;">
+    <p style="text-align:center; margin-bottom:32px;">無料相見積もり・ご相談はこちらのフォームからお気軽にお問い合わせください。<br>担当者より2営業日以内にご連絡いたします。</p>
+
+    <!--
+      フォーム送信先: Formspree (https://formspree.io) の無料プランを利用。
+      1. Formspreeに登録 → 新規フォーム作成 → 発行されたエンドポイントURLを
+         下のaction属性の "YOUR_FORM_ID" 部分に貼り替えてください。
+      2. 初回送信時のみFormspreeから確認メールが届くので、承認すると
+         以降は指定したメールアドレスに問い合わせ内容が届くようになります。
+    -->
+    <form class="contact-form" id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <div class="form-row">
+        <label>お名前 <span class="required">必須</span></label>
+        <input type="text" name="name" placeholder="山田 太郎" required>
+      </div>
+      <div class="form-row">
+        <label>メールアドレス <span class="required">必須</span></label>
+        <input type="email" name="email" placeholder="example@mail.com" required>
+      </div>
+      <div class="form-row">
+        <label>電話番号</label>
+        <input type="tel" name="tel" placeholder="090-0000-0000">
+      </div>
+      <div class="form-row">
+        <label>お問い合わせ内容 <span class="required">必須</span></label>
+        <select name="subject" required>
+          <option value="">選択してください</option>
+          <option value="新築">新築について</option>
+          <option value="リフォーム">リフォームについて</option>
+          <option value="水まわり">水まわり工事について</option>
+          <option value="外構">外構工事について</option>
+          <option value="その他">その他</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label>詳細・ご質問</label>
+        <textarea name="message" rows="6" placeholder="ご要望やご質問があればご記入ください"></textarea>
+      </div>
+      <input type="hidden" name="_next" value="thanks.html">
+      <input type="text" name="_gotcha" style="display:none">
+      <div style="text-align:center;">
+        <button type="submit" class="btn btn-primary" style="background:#2f4a3e; border:none; cursor:pointer;">送信する</button>
+      </div>
+    </form>
+    <p id="form-note" style="text-align:center; margin-top:16px; color:#888; font-size:0.85rem;">
+      ※現在は "YOUR_FORM_ID" が未設定のため送信できません。Formspreeでフォームを作成し、IDを差し替えると実際にメールで受信できます。
+    </p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <h4>杜の工務店</h4>
+        <p style="font-size:0.85rem;">〒000-0000<br>◯◯県◯◯市◯◯町1-2-3<br>TEL: 0120-000-000<br>営業時間 9:00〜18:00（水曜定休）</p>
+      </div>
+      <div>
+        <h4>メニュー</h4>
+        <ul class="footer-nav">
+          <li><a href="index.html">TOP</a></li>
+          <li><a href="service.html">事業内容</a></li>
+          <li><a href="about.html">会社概要</a></li>
+          <li><a href="works.html">施工実績</a></li>
+          <li><a href="contact.html">お問い合わせ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">&copy; 2026 杜の工務店（試作サイト・サンプルデータ）</div>
+  </div>
+</footer>
+
+</body>
+</html>
