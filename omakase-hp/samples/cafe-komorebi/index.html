@@ -1,108 +1,127 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" translate="no">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>喫茶とパン こもれび｜自家焙煎とおやつパンの店</title>
-<meta name="description" content="自家焙煎コーヒーと、毎朝焼き上げるおやつパン。喫茶とパン こもれび でゆっくりとした時間を。">
-<link rel="stylesheet" href="css/style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="google" content="notranslate">
+<title>喫茶とパン こもれび</title>
+<meta name="description" content="毎朝焼きたてのパンと、ハンドドリップのコーヒー。住宅街の小さな喫茶店 こもれび。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&family=Klee+One:wght@600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#fbf6ec;color:#3b2f25;font-family:"Zen Maru Gothic",sans-serif;line-height:1.95;font-size:15px}
+a{color:#a0562c}a:hover{color:#3b2f25}
+input,textarea,button{font:inherit}
+.hand{font-family:"Klee One",cursive;color:#a0562c;font-size:15px;letter-spacing:.1em}
+h2{margin:6px 0 0;font-weight:700;font-size:28px;letter-spacing:.08em}
+.pad{padding:clamp(72px,10vw,130px) clamp(20px,5vw,56px)}
+.wrap{max-width:1080px;margin:0 auto}
+.center{text-align:center}
+header{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:18px clamp(20px,4vw,48px);flex-wrap:wrap}
+.logo{font-weight:700;font-size:20px;letter-spacing:.12em;color:#3b2f25;text-decoration:none;display:flex;flex-direction:column;line-height:1.3}
+.logo small{font-family:"Klee One",cursive;font-size:12px;color:#a0562c;letter-spacing:.2em}
+nav{display:flex;flex-wrap:wrap;gap:8px 24px;font-size:14px;font-weight:500}
+nav a{color:#3b2f25;text-decoration:none}
+.hero{margin:0 clamp(12px,2vw,24px);border-radius:28px;overflow:hidden;position:relative;min-height:78vh;background:#c9b193 url('https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=2000&q=80') center/cover;display:flex;align-items:flex-end}
+.hero .card{margin:clamp(16px,4vw,48px);background:#fbf6ec;border-radius:20px;padding:clamp(24px,4vw,44px);max-width:460px;display:flex;flex-direction:column;gap:14px}
+.hero h1{margin:0;font-size:clamp(28px,4vw,42px);line-height:1.5;letter-spacing:.06em}
+.muted{color:#76665a}
+.times{display:flex;flex-wrap:wrap;gap:8px 20px;font-size:14px}
+.times b{color:#a0562c;font-weight:500}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(36px,6vw,80px);align-items:center}
+.ph{border-radius:24px;background:#e8dac5 center/cover no-repeat}
+.bread{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px;margin-top:48px}
+.bread .ph{aspect-ratio:1;margin-bottom:14px}
+.bread .name{font-weight:700;font-size:16px}
+.bread .p{color:#a0562c;font-weight:500}
+.alt{background:#f3e8d6}
+.drinks{max-width:640px;margin:48px auto 0;background:#fbf6ec;border-radius:24px;padding:clamp(24px,4vw,44px)}
+.row{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px dashed #d7c4aa}
+.row:last-child{border:0}
+.set{display:inline-block;margin-top:20px;background:#a0562c;color:#fbf6ec;border-radius:999px;padding:6px 18px;font-size:13px}
+dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:10px 24px}dt{color:#a0562c;font-weight:500}dd{margin:0}
+.box{background:#3b2f25;color:#fbf6ec;border-radius:28px;margin:0 clamp(12px,2vw,24px);padding:clamp(56px,8vw,100px) clamp(20px,5vw,56px)}
+.box .hand{color:#e7b98f}
+form{display:flex;flex-direction:column;gap:18px;max-width:560px;margin:40px auto 0}
+label{display:flex;flex-direction:column;gap:6px;font-size:14px}
+.f{padding:14px 16px;background:#4a3d31;border:0;border-radius:12px;color:#fbf6ec}
+.send{margin-top:8px;padding:16px;background:#e7b98f;color:#3b2f25;border:0;border-radius:999px;font-weight:700;letter-spacing:.15em;cursor:pointer}
+footer{padding:40px 24px;text-align:center;font-size:13px;color:#76665a}
+</style>
 </head>
 <body>
-
-<header class="site-header">
-  <div class="header-inner">
-    <div class="logo">こもれび<span>coffee & bread</span></div>
-    <ul class="nav-list">
-      <li><a href="#concept">こだわり</a></li>
-      <li><a href="#menu">メニュー</a></li>
-      <li><a href="#gallery">ギャラリー</a></li>
-      <li><a href="#access">アクセス</a></li>
-    </ul>
-  </div>
+<header>
+  <a href="#top" class="logo"><small>kissa &amp; pan</small>喫茶とパン こもれび</a>
+  <nav><a href="#about">こもれびのこと</a><a href="#bread">パン</a><a href="#menu">喫茶メニュー</a><a href="#info">店舗情報</a><a href="#contact">お問い合わせ</a></nav>
 </header>
 
-<section class="hero">
-  <span class="eyebrow">COFFEE & BAKERY</span>
-  <h1>木もれびの下で、<br>ひと息つく時間。</h1>
-  <p>自家焙煎のコーヒーと、毎朝焼き上げるおやつパンをどうぞ。</p>
-  <a href="#menu" class="btn btn-primary">メニューを見る</a>
-  <a href="#access" class="btn btn-outline">アクセス</a>
-</section>
-
-<section id="concept">
-  <div class="container">
-    <span class="section-eyebrow">CONCEPT</span>
-    <h2 class="section-title">こだわり</h2>
-    <div class="concept-grid">
-      <div class="ph-box dark">店内の写真</div>
-      <div>
-        <p>豆は自家焙煎、パンは毎朝店内で焼き上げています。窓から差し込む
-        木もれびのように、ふとひと息つける場所でありたい。そんな想いで、
-        一杯のコーヒーと一つのパンを、ゆっくりとお楽しみいただけます。</p>
-      </div>
-    </div>
+<section id="top" class="hero" role="img" aria-label="焼きたてのパン">
+  <div class="card">
+    <span class="hand">おはようございます</span>
+    <h1>焼きたてのパンと、<br>いれたてのコーヒー。</h1>
+    <div class="times"><span><b>朝</b> 7:30〜 パン販売</span><span><b>昼</b> 11:00〜 喫茶</span></div>
   </div>
 </section>
 
-<section id="menu" style="background:var(--color-cream);">
-  <div class="container">
-    <span class="section-eyebrow">MENU</span>
-    <h2 class="section-title">メニュー</h2>
-    <p class="section-sub">すべて自家焙煎・自家製</p>
-    <div class="menu-tabs-wrap">
-      <div class="menu-category">
-        <h3>コーヒー</h3>
-        <div class="menu-row"><div><div class="name">本日のドリップコーヒー</div><div class="desc">日替わりの豆でお楽しみいただけます</div></div><div class="price">¥550</div></div>
-        <div class="menu-row"><div><div class="name">カフェラテ</div></div><div class="price">¥650</div></div>
-        <div class="menu-row"><div><div class="name">水出しアイスコーヒー</div></div><div class="price">¥600</div></div>
-      </div>
-      <div class="menu-category">
-        <h3>おやつパン</h3>
-        <div class="menu-row"><div><div class="name">クロワッサン</div></div><div class="price">¥380</div></div>
-        <div class="menu-row"><div><div class="name">季節のフルーツデニッシュ</div></div><div class="price">¥480</div></div>
-        <div class="menu-row"><div><div class="name">こもれびのメロンパン</div><div class="desc">当店の看板商品</div></div><div class="price">¥420</div></div>
-      </div>
-      <div class="menu-category">
-        <h3>スイーツ</h3>
-        <div class="menu-row"><div><div class="name">自家製チーズケーキ</div></div><div class="price">¥580</div></div>
-        <div class="menu-row"><div><div class="name">本日のタルト</div></div><div class="price">¥620</div></div>
-      </div>
-    </div>
+<section id="about" class="pad"><div class="wrap two">
+  <div class="ph" role="img" aria-label="店内" style="aspect-ratio:5/4;background-image:url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1200&q=80')"></div>
+  <div style="display:flex;flex-direction:column;gap:18px">
+    <span class="hand">about</span><h2 style="margin:0">こもれびのこと</h2>
+    <p class="muted" style="margin:0">住宅街の角にある、10席ほどの小さな喫茶店です。パンは毎朝4時から、国産小麦と自家製酵母でひとつずつ焼いています。窓ぎわの木もれ日の席で、ゆっくりしていってください。</p>
   </div>
+</div></section>
+
+<section id="bread" class="pad alt"><div class="wrap">
+  <div class="center"><span class="hand">bread</span><h2>今日のパン</h2><p class="muted" style="margin:8px 0 0">売り切れ次第終了です。お取り置きはお電話で。</p></div>
+  <div class="bread">
+    <div><div class="ph" style="background-image:url('https://images.unsplash.com/photo-1549931319-a545dcf3bc73?auto=format&fit=crop&w=700&q=80')"></div><div class="name">こもれび食パン</div><div class="muted" style="font-size:14px">もっちり、ほんのり甘い看板商品</div><div class="p">1斤 ¥480</div></div>
+    <div><div class="ph" style="background-image:url('https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=700&q=80')"></div><div class="name">発酵バターのクロワッサン</div><div class="muted" style="font-size:14px">朝いちばんに売り切れます</div><div class="p">¥280</div></div>
+    <div><div class="ph" style="background-image:url('https://images.unsplash.com/photo-1586444248902-2f64eddc13df?auto=format&fit=crop&w=700&q=80')"></div><div class="name">くるみとレーズンのカンパーニュ</div><div class="muted" style="font-size:14px">ハーフサイズもあります</div><div class="p">¥650</div></div>
+  </div>
+</div></section>
+
+<section id="menu" class="pad"><div class="wrap">
+  <div class="center"><span class="hand">menu</span><h2>喫茶メニュー</h2></div>
+  <div class="drinks" style="background:#f3e8d6">
+    <div class="row"><span>ハンドドリップコーヒー</span><span>¥500</span></div>
+    <div class="row"><span>カフェオレ</span><span>¥550</span></div>
+    <div class="row"><span>ほうじ茶ラテ</span><span>¥550</span></div>
+    <div class="row"><span>自家製レモネード</span><span>¥500</span></div>
+    <div class="row"><span>季節のタルティーヌ</span><span>¥800</span></div>
+    <div class="row"><span>たまごサンド</span><span>¥650</span></div>
+    <div class="center"><span class="set">ドリンクセットは −¥150</span></div>
+  </div>
+</div></section>
+
+<section id="info" class="pad alt"><div class="wrap two">
+  <div style="display:flex;flex-direction:column;gap:20px">
+    <span class="hand">information</span><h2 style="margin:0">店舗情報</h2>
+    <dl>
+      <dt>住所</dt><dd>〒000-0000 ◯◯県◯◯市◯◯町4-5-6</dd>
+      <dt>パン販売</dt><dd>7:30〜18:00</dd>
+      <dt>喫茶</dt><dd>11:00〜17:00（L.O. 16:30）</dd>
+      <dt>定休日</dt><dd>日曜・月曜</dd>
+      <dt>電話</dt><dd>000-000-0000</dd>
+      <dt>お支払い</dt><dd>現金・PayPay・交通系IC</dd>
+    </dl>
+  </div>
+  <div class="ph" style="min-height:300px;display:flex;align-items:center;justify-content:center;color:#a0562c;font-size:13px">地図（Googleマップ埋め込み）</div>
+</div></section>
+
+<div style="height:clamp(40px,6vw,72px)"></div>
+<section id="contact" class="box">
+  <div class="center"><span class="hand">contact</span><h2>お問い合わせ・お取り置き</h2></div>
+  <form action="https://formsubmit.co/y.mutoh2216@gmail.com" method="POST">
+    <input type="hidden" name="_subject" value="【喫茶とパン こもれび】ホームページからのお問い合わせ">
+    <input type="hidden" name="_template" value="table">
+    <label>お名前<input class="f" name="お名前" required></label>
+    <label>メールアドレス<input class="f" type="email" name="email" required></label>
+    <label>内容（お取り置きはパン名・個数・受取日時）<textarea class="f" name="内容" rows="4"></textarea></label>
+    <button type="submit" class="send">送信する</button>
+  </form>
 </section>
 
-<section id="gallery">
-  <div class="container">
-    <span class="section-eyebrow">GALLERY</span>
-    <h2 class="section-title">店内のご紹介</h2>
-    <div class="gallery-grid">
-      <div class="ph-box">店内写真01</div>
-      <div class="ph-box dark">店内写真02</div>
-      <div class="ph-box">パン写真03</div>
-      <div class="ph-box dark">コーヒー写真04</div>
-    </div>
-  </div>
-</section>
-
-<section id="access" style="background:var(--color-cream);">
-  <div class="container">
-    <span class="section-eyebrow">ACCESS</span>
-    <h2 class="section-title">アクセス・営業時間</h2>
-    <div class="access-box">
-      <p>〒000-0000 ◯◯県◯◯市◯◯町1-2-3</p>
-      <p style="margin-top:8px;">営業時間 8:00〜17:00(L.O.16:30)<br>定休日 木曜日</p>
-      <p class="accent" style="margin-top:24px;">TEL 000-000-0000</p>
-      <div style="margin-top:32px;">
-        <a href="tel:0000000000" class="btn btn-primary">電話でお問い合わせ</a>
-        <a href="https://www.instagram.com/" class="btn btn-outline" style="color:var(--color-brown-dark); border-color:var(--color-brown-dark);">Instagram</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer class="site-footer">
-  &copy; 2026 喫茶とパン こもれび（試作サイト・サンプルデータ）
-</footer>
-
+<footer>© 2026 喫茶とパン こもれび　※このサイトはサンプルです</footer>
 </body>
 </html>
