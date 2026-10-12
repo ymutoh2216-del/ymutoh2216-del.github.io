@@ -60,6 +60,7 @@
         <a href="#works" class="hover:text-accent transition-colors">実績サンプル</a>
         <a href="#pricing" class="hover:text-accent transition-colors">料金</a>
         <a href="#flow" class="hover:text-accent transition-colors">お申し込みの流れ</a>
+        <a href="#faq" class="hover:text-accent transition-colors">よくある質問</a>
       </nav>
       <a href="#contact" class="inline-flex items-center gap-2 bg-ink text-cream text-sm font-medium px-5 py-2.5 rounded-full hover:bg-accent transition-colors">
         お問い合わせ <i class="ph ph-arrow-right"></i>
@@ -68,22 +69,46 @@
   </header>
 
   <!-- Hero -->
-  <section id="top" class="max-w-6xl mx-auto px-5 md:px-8 pt-16 pb-20 md:pt-24 md:pb-28">
-    <p class="text-accent font-semibold tracking-widest text-sm mb-6">中小企業・個人店様向け ホームページ制作</p>
-    <h1 class="font-heading font-black text-4xl md:text-6xl leading-[1.3] max-w-3xl mb-8">
-      「作ったはいいけど、<br>更新できない」を、<br>なくす。
-    </h1>
-    <p class="text-muted text-base md:text-lg max-w-xl leading-loose mb-10">
-      工務店・美容室・花屋・カフェ・士業など、更新頻度の低い業種に特化してホームページを制作しています。
-      公開後の文章・写真の差し替えもすべてお任せいただけるので、経営者様は本業に集中していただけます。
-      まずは実績サンプルをご覧ください。
-    </p>
-    <div class="flex flex-wrap gap-4">
-      <a href="#works" class="inline-flex items-center gap-2 bg-ink text-cream font-medium px-7 py-3.5 rounded-full hover:bg-accent transition-colors">
-        実績サンプルを見る <i class="ph ph-arrow-right"></i>
+  <section id="top" class="max-w-6xl mx-auto px-5 md:px-8 pt-16 pb-20 md:pt-24 md:pb-28 grid md:grid-cols-[1.15fr_0.85fr] gap-12 md:gap-16 items-center">
+    <div>
+      <p class="text-accent font-semibold tracking-widest text-sm mb-6">中小企業・個人店様向け ホームページ制作</p>
+      <h1 class="font-heading font-black text-[1.9rem] sm:text-4xl lg:text-5xl leading-[1.35] max-w-3xl mb-8">
+        <span class="inline-block -ml-[0.45em]">「作ったはいいけど、</span><br><span class="inline-block">更新できない」を、</span><br><span class="inline-block">なくす。</span>
+      </h1>
+      <p class="text-muted text-base md:text-lg max-w-xl leading-loose mb-8">
+        工務店・美容室・花屋・カフェ・士業など、更新頻度の低い業種に特化してホームページを制作しています。公開後の文章・写真の差し替えもすべてお任せいただけるので、経営者様は本業に集中していただけます。
+      </p>
+
+      <!-- 料金の目安 -->
+      <p class="bg-white border-l-4 border-accent px-5 py-4 mb-10 max-w-xl font-medium leading-relaxed">
+        ホームページ一式<strong class="font-heading font-black text-2xl mx-1 whitespace-nowrap">38,000円</strong>から。<br>
+        公開後の更新おまかせは月々<strong class="font-heading font-black text-2xl mx-1 whitespace-nowrap">5,000円</strong>から。
+      </p>
+
+      <div class="flex flex-wrap gap-4">
+        <a href="#works" class="inline-flex items-center gap-2 bg-ink text-cream font-medium px-7 py-3.5 rounded-full hover:bg-accent transition-colors">
+          美容室・カフェ・花屋・士業の制作例8件を見る <i class="ph ph-arrow-right"></i>
+        </a>
+        <a href="#omakase-set" class="inline-flex items-center gap-2 border border-ink/20 font-medium px-7 py-3.5 rounded-full hover:border-accent hover:text-accent transition-colors">
+          新プラン「HPおまかせセット」とは
+        </a>
+      </div>
+    </div>
+
+    <!-- 制作例のチラ見せ -->
+    <div>
+      <p class="font-heading font-bold text-sm mb-4">制作例を少しだけご紹介</p>
+      <a href="samples/cafe-komorebi/index.html" target="_blank" rel="noopener" class="group block">
+        <div class="aspect-[4/3] overflow-hidden rounded-2xl card-shadow bg-white">
+          <img src="samples/cafe-komorebi/thumb.jpg" alt="喫茶とパン こもれびのサイトサンプル" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null;this.src='https://ymutoh2216-del.github.io/omakase-hp/'+this.getAttribute('src')">
+        </div>
+        <span class="block text-sm font-medium mt-3">カフェ｜喫茶とパン こもれび</span>
       </a>
-      <a href="#omakase-set" class="inline-flex items-center gap-2 border border-ink/20 font-medium px-7 py-3.5 rounded-full hover:border-accent hover:text-accent transition-colors">
-        新プラン「HPおまかせセット」とは
+      <a href="samples/tax-aoba/index.html" target="_blank" rel="noopener" class="group block mt-8">
+        <div class="aspect-[4/3] overflow-hidden rounded-2xl card-shadow bg-white">
+          <img src="samples/tax-aoba/thumb.jpg" alt="あおば税理士事務所のサイトサンプル" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null;this.src='https://ymutoh2216-del.github.io/omakase-hp/'+this.getAttribute('src')">
+        </div>
+        <span class="block text-sm font-medium mt-3">税理士事務所｜あおば税理士事務所</span>
       </a>
     </div>
   </section>
@@ -129,7 +154,7 @@
 
       <a href="samples/salon/index.html" target="_blank" rel="noopener" class="group block rounded-2xl overflow-hidden card-shadow bg-white">
         <div class="aspect-[4/3] overflow-hidden">
-          <img src="samples/salon/thumb.jpg" alt="hair salon Nagiのサイトサンプル" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <img src="samples/salon/thumb.jpg" alt="hair salon Nagiのサイトサンプル" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null;this.src='https://ymutoh2216-del.github.io/omakase-hp/'+this.getAttribute('src')">
         </div>
         <div class="p-6">
           <span class="text-xs font-semibold text-accent tracking-widest">美容室</span>
@@ -140,7 +165,7 @@
 
       <a href="samples/cafe-komorebi/index.html" target="_blank" rel="noopener" class="group block rounded-2xl overflow-hidden card-shadow bg-white">
         <div class="aspect-[4/3] overflow-hidden">
-          <img src="samples/cafe-komorebi/thumb.jpg" alt="喫茶とパン こもれびのサイトサンプル" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <img src="samples/cafe-komorebi/thumb.jpg" alt="喫茶とパン こもれびのサイトサンプル" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null;this.src='https://ymutoh2216-del.github.io/omakase-hp/'+this.getAttribute('src')">
         </div>
         <div class="p-6">
           <span class="text-xs font-semibold text-accent tracking-widest">カフェ・パン屋</span>
@@ -151,7 +176,7 @@
 
       <a href="samples/flower-nonone/index.html" target="_blank" rel="noopener" class="group block rounded-2xl overflow-hidden card-shadow bg-white">
         <div class="aspect-[4/3] overflow-hidden">
-          <img src="samples/flower-nonone/thumb.jpg" alt="花とみどり 野の音のサイトサンプル" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <img src="samples/flower-nonone/thumb.jpg" alt="花とみどり 野の音のサイトサンプル" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null;this.src='https://ymutoh2216-del.github.io/omakase-hp/'+this.getAttribute('src')">
         </div>
         <div class="p-6">
           <span class="text-xs font-semibold text-accent tracking-widest">花屋・観葉植物</span>
@@ -162,7 +187,7 @@
 
       <a href="samples/flower-akari/index.html" target="_blank" rel="noopener" class="group block rounded-2xl overflow-hidden card-shadow bg-white">
         <div class="aspect-[4/3] overflow-hidden">
-          <img src="samples/flower-akari/thumb.jpg" alt="Flower Atelier 灯のサイトサンプル" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <img src="samples/flower-akari/thumb.jpg" alt="Flower Atelier 灯のサイトサンプル" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null;this.src='https://ymutoh2216-del.github.io/omakase-hp/'+this.getAttribute('src')">
         </div>
         <div class="p-6">
           <span class="text-xs font-semibold text-accent tracking-widest">花屋(ギフト・オーダー中心)</span>
@@ -178,7 +203,7 @@
 
       <a href="samples/tax-aoba/index.html" target="_blank" rel="noopener" class="group block rounded-2xl overflow-hidden card-shadow bg-white">
         <div class="aspect-[4/3] overflow-hidden">
-          <img src="samples/tax-aoba/thumb.jpg" alt="あおば税理士事務所のサイトサンプル" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <img src="samples/tax-aoba/thumb.jpg" alt="あおば税理士事務所のサイトサンプル" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null;this.src='https://ymutoh2216-del.github.io/omakase-hp/'+this.getAttribute('src')">
         </div>
         <div class="p-6">
           <span class="text-xs font-semibold text-accent tracking-widest">税理士事務所</span>
@@ -189,7 +214,7 @@
 
       <a href="samples/shiho-hidamari/index.html" target="_blank" rel="noopener" class="group block rounded-2xl overflow-hidden card-shadow bg-white">
         <div class="aspect-[4/3] overflow-hidden">
-          <img src="samples/shiho-hidamari/thumb.jpg" alt="ひだまり司法書士事務所のサイトサンプル" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <img src="samples/shiho-hidamari/thumb.jpg" alt="ひだまり司法書士事務所のサイトサンプル" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null;this.src='https://ymutoh2216-del.github.io/omakase-hp/'+this.getAttribute('src')">
         </div>
         <div class="p-6">
           <span class="text-xs font-semibold text-accent tracking-widest">司法書士事務所</span>
@@ -200,7 +225,7 @@
 
       <a href="samples/sharoushi-minato/index.html" target="_blank" rel="noopener" class="group block rounded-2xl overflow-hidden card-shadow bg-white">
         <div class="aspect-[4/3] overflow-hidden">
-          <img src="samples/sharoushi-minato/thumb.jpg" alt="みなと社労士オフィスのサイトサンプル" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <img src="samples/sharoushi-minato/thumb.jpg" alt="みなと社労士オフィスのサイトサンプル" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null;this.src='https://ymutoh2216-del.github.io/omakase-hp/'+this.getAttribute('src')">
         </div>
         <div class="p-6">
           <span class="text-xs font-semibold text-accent tracking-widest">社会保険労務士事務所</span>
@@ -211,7 +236,7 @@
 
       <a href="samples/gyosei-sakura/index.html" target="_blank" rel="noopener" class="group block rounded-2xl overflow-hidden card-shadow bg-white">
         <div class="aspect-[4/3] overflow-hidden">
-          <img src="samples/gyosei-sakura/thumb.jpg" alt="さくら通り行政書士事務所のサイトサンプル" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <img src="samples/gyosei-sakura/thumb.jpg" alt="さくら通り行政書士事務所のサイトサンプル" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null;this.src='https://ymutoh2216-del.github.io/omakase-hp/'+this.getAttribute('src')">
         </div>
         <div class="p-6">
           <span class="text-xs font-semibold text-accent tracking-widest">行政書士事務所</span>
@@ -361,6 +386,73 @@
         <div><span class="text-accent font-heading font-bold text-3xl">04</span><p class="mt-4 text-sm text-cream/80 leading-relaxed">公開</p></div>
         <div><span class="text-accent font-heading font-bold text-3xl">05</span><p class="mt-4 text-sm text-cream/80 leading-relaxed">アフターフォロー<br>修正代行 or 月額プランのご案内</p></div>
       </div>
+
+      <div class="mt-14 border-t border-cream/15 pt-10">
+        <h3 class="font-heading font-bold text-lg mb-6">制作期間の目安(原稿・写真がそろってから)</h3>
+        <div class="grid sm:grid-cols-3 gap-4 text-sm">
+          <div class="bg-cream/5 border border-cream/15 rounded-xl p-5"><p class="text-cream/60 mb-1">HPおまかせセット</p><p class="font-heading font-bold text-xl">約2週間</p></div>
+          <div class="bg-cream/5 border border-cream/15 rounded-xl p-5"><p class="text-cream/60 mb-1">ライト(1ページ)</p><p class="font-heading font-bold text-xl">約2〜3週間</p></div>
+          <div class="bg-cream/5 border border-cream/15 rounded-xl p-5"><p class="text-cream/60 mb-1">スタンダード/プレミアム</p><p class="font-heading font-bold text-xl">約1〜1.5か月</p></div>
+        </div>
+        <p class="text-xs text-cream/60 mt-4">※無料サンプルのご提案は、ご相談から3〜5日ほどでお送りします。開店日などお急ぎの場合はご相談ください。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="max-w-6xl mx-auto px-5 md:px-8 py-20 md:py-28">
+    <div class="grid md:grid-cols-[0.8fr_1.2fr] gap-10 md:gap-16 items-start">
+      <div>
+        <p class="text-accent font-semibold tracking-widest text-sm mb-4">ABOUT</p>
+        <h2 class="font-heading font-bold text-2xl md:text-4xl leading-snug">制作担当について</h2>
+      </div>
+      <div class="space-y-6 text-ink/80 leading-loose">
+        <p>おまかせHP制作室は、個人で運営しているホームページ制作室です。営業担当や下請けをはさまず、<strong class="text-ink">ご相談から制作・公開後の修正まで、同じ担当者が直接対応</strong>します。「言ったことが伝わっていない」「誰に頼めばいいか分からない」ということがありません。</p>
+        <p>最新の制作ツールを取り入れて作業を効率化しているため、制作会社に依頼するよりも費用を抑えてご提供できます。そのぶん、お店や事務所の雰囲気・お客様に伝えたいことを伺う時間を大切にしています。</p>
+        <ul class="grid sm:grid-cols-3 gap-4 text-sm pt-2">
+          <li class="bg-white rounded-xl p-5 card-shadow"><i class="ph ph-user-circle text-accent text-2xl"></i><p class="font-bold mt-2">担当者が直接対応</p></li>
+          <li class="bg-white rounded-xl p-5 card-shadow"><i class="ph ph-map-trifold text-accent text-2xl"></i><p class="font-bold mt-2">全国オンライン対応</p></li>
+          <li class="bg-white rounded-xl p-5 card-shadow"><i class="ph ph-clock text-accent text-2xl"></i><p class="font-bold mt-2">2営業日以内にご返信</p></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="bg-accentSoft py-20 md:py-28">
+    <div class="max-w-3xl mx-auto px-5 md:px-8">
+      <p class="text-accent font-semibold tracking-widest text-sm mb-4">FAQ</p>
+      <h2 class="font-heading font-bold text-2xl md:text-4xl mb-12">よくある質問</h2>
+      <div class="space-y-3">
+        <details class="group bg-white rounded-xl card-shadow">
+          <summary class="flex justify-between items-center gap-4 cursor-pointer list-none px-6 py-5 font-bold">パソコンやホームページに詳しくなくても大丈夫ですか?<i class="ph ph-plus text-accent shrink-0 group-open:rotate-45 transition-transform"></i></summary>
+          <p class="px-6 pb-6 text-sm text-ink/75 leading-loose">大丈夫です。専門用語を使わずにご説明します。公開作業や公開後の更新もお任せいただきたい場合は「丸ごとお任せプラン」がおすすめです。</p>
+        </details>
+        <details class="group bg-white rounded-xl card-shadow">
+          <summary class="flex justify-between items-center gap-4 cursor-pointer list-none px-6 py-5 font-bold">お店の写真や文章が用意できていません。<i class="ph ph-plus text-accent shrink-0 group-open:rotate-45 transition-transform"></i></summary>
+          <p class="px-6 pb-6 text-sm text-ink/75 leading-loose">文章はヒアリングの内容をもとにこちらで下書きします。写真がそろうまでは雰囲気の合う素材写真で仮に作成し、あとから差し替えることもできます。</p>
+        </details>
+        <details class="group bg-white rounded-xl card-shadow">
+          <summary class="flex justify-between items-center gap-4 cursor-pointer list-none px-6 py-5 font-bold">無料サンプルは本当に無料ですか?<i class="ph ph-plus text-accent shrink-0 group-open:rotate-45 transition-transform"></i></summary>
+          <p class="px-6 pb-6 text-sm text-ink/75 leading-loose">はい、無料です。ご覧いただいたうえでご依頼にならなくても、費用は一切かかりません。</p>
+        </details>
+        <details class="group bg-white rounded-xl card-shadow">
+          <summary class="flex justify-between items-center gap-4 cursor-pointer list-none px-6 py-5 font-bold">制作費のほかにかかる費用はありますか?<i class="ph ph-plus text-accent shrink-0 group-open:rotate-45 transition-transform"></i></summary>
+          <p class="px-6 pb-6 text-sm text-ink/75 leading-loose">ホームページを公開するためのサーバー代・ドメイン代(一般的に年間数千円〜)がお客様のご負担となります。契約や管理をこちらで代行する場合は「保守ライト」プランをご利用ください。</p>
+        </details>
+        <details class="group bg-white rounded-xl card-shadow">
+          <summary class="flex justify-between items-center gap-4 cursor-pointer list-none px-6 py-5 font-bold">スマートフォンでもきれいに見えますか?<i class="ph ph-plus text-accent shrink-0 group-open:rotate-45 transition-transform"></i></summary>
+          <p class="px-6 pb-6 text-sm text-ink/75 leading-loose">はい。すべてのプランでスマートフォン・タブレット表示に対応しています。実績サンプルもスマートフォンでご確認いただけます。</p>
+        </details>
+        <details class="group bg-white rounded-xl card-shadow">
+          <summary class="flex justify-between items-center gap-4 cursor-pointer list-none px-6 py-5 font-bold">遠方でも依頼できますか?<i class="ph ph-plus text-accent shrink-0 group-open:rotate-45 transition-transform"></i></summary>
+          <p class="px-6 pb-6 text-sm text-ink/75 leading-loose">全国どこからでもご依頼いただけます。打ち合わせはメール・SNSのメッセージで行い、ご希望があればオンライン通話にも対応します。</p>
+        </details>
+        <details class="group bg-white rounded-xl card-shadow">
+          <summary class="flex justify-between items-center gap-4 cursor-pointer list-none px-6 py-5 font-bold">支払いのタイミングはいつですか?<i class="ph ph-plus text-accent shrink-0 group-open:rotate-45 transition-transform"></i></summary>
+          <p class="px-6 pb-6 text-sm text-ink/75 leading-loose">ご契約時の着手金と納品時の残金に分けてのお支払い、または一括でのお支払いをお選びいただけます(銀行振込)。ご請求書はメールでお送りします。</p>
+        </details>
+      </div>
     </div>
   </section>
 
@@ -368,7 +460,50 @@
   <section id="contact" class="max-w-6xl mx-auto px-5 md:px-8 py-20 md:py-28 text-center">
     <p class="text-accent font-semibold tracking-widest text-sm mb-4">CONTACT</p>
     <h2 class="font-heading font-bold text-2xl md:text-4xl mb-6">まずはお気軽にご相談ください</h2>
-    <p class="text-muted max-w-lg mx-auto leading-relaxed mb-10">貴社名を入れた無料モックアップのご提案から承っています。メール・SNSどちらからでもお気軽にどうぞ。</p>
+    <p class="text-muted max-w-lg mx-auto leading-relaxed mb-10">貴社名を入れた無料モックアップのご提案から承っています。下のフォームから1分ほどで送信できます。</p>
+
+    <form action="https://formsubmit.co/omakasehp.seisaku@gmail.com" method="POST" class="max-w-2xl mx-auto text-left bg-white rounded-2xl card-shadow p-6 md:p-10 space-y-6 mb-12">
+      <input type="hidden" name="_subject" value="【おまかせHP制作室】サイトからのお問い合わせ">
+      <input type="hidden" name="_next" value="https://ymutoh2216-del.github.io/omakase-hp/thanks.html">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="text" name="_honey" class="hidden" tabindex="-1" autocomplete="off">
+
+      <div class="grid sm:grid-cols-2 gap-6">
+        <label class="block">
+          <span class="text-sm font-bold">お名前 <span class="text-accent text-xs">必須</span></span>
+          <input type="text" name="お名前" required class="mt-2 w-full rounded-lg border border-ink/15 bg-cream/50 px-4 py-3 focus:outline-none focus:border-accent">
+        </label>
+        <label class="block">
+          <span class="text-sm font-bold">店舗名・事務所名</span>
+          <input type="text" name="店舗名・事務所名" class="mt-2 w-full rounded-lg border border-ink/15 bg-cream/50 px-4 py-3 focus:outline-none focus:border-accent">
+        </label>
+      </div>
+      <label class="block">
+        <span class="text-sm font-bold">メールアドレス <span class="text-accent text-xs">必須</span></span>
+        <input type="email" name="email" required class="mt-2 w-full rounded-lg border border-ink/15 bg-cream/50 px-4 py-3 focus:outline-none focus:border-accent">
+      </label>
+      <label class="block">
+        <span class="text-sm font-bold">ご検討中のプラン</span>
+        <select name="ご検討中のプラン" class="mt-2 w-full rounded-lg border border-ink/15 bg-cream/50 px-4 py-3 focus:outline-none focus:border-accent">
+          <option>まだ決めていない・相談したい</option>
+          <option>丸ごとお任せプラン</option>
+          <option>HPおまかせセット</option>
+          <option>修正代行・月額保守</option>
+          <option>無料サンプルだけ見てみたい</option>
+        </select>
+      </label>
+      <label class="block">
+        <span class="text-sm font-bold">ご相談内容 <span class="text-accent text-xs">必須</span></span>
+        <textarea name="ご相談内容" rows="5" required placeholder="例:来春に開業するカフェのホームページを作りたいです。今あるのはInstagramだけです。" class="mt-2 w-full rounded-lg border border-ink/15 bg-cream/50 px-4 py-3 focus:outline-none focus:border-accent"></textarea>
+      </label>
+      <button type="submit" class="w-full inline-flex items-center justify-center gap-2 bg-ink text-cream font-medium px-7 py-4 rounded-full hover:bg-accent transition-colors">
+        この内容で送信する <i class="ph ph-paper-plane-tilt"></i>
+      </button>
+      <p class="text-xs text-muted text-center">2営業日以内にメールでご返信します。ご入力いただいた情報は、ご返信以外の目的には使用しません。</p>
+    </form>
+
+    <p class="text-sm text-muted mb-5">メール・SNSからのご連絡も歓迎です</p>
     <div class="flex flex-wrap justify-center gap-4">
       <a href="mailto:omakasehp.seisaku@gmail.com" class="inline-flex items-center gap-2 bg-ink text-cream font-medium px-7 py-3.5 rounded-full hover:bg-accent transition-colors">
         <i class="ph ph-envelope-simple"></i> メールで相談する

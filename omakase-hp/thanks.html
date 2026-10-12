@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>送信完了 | おまかせHP制作室</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@700;900&family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+<script>
+  tailwind.config = { theme: { extend: {
+    fontFamily: { heading: ['"Zen Kaku Gothic New"', 'sans-serif'], body: ['"Noto Sans JP"', 'sans-serif'] },
+    colors: { ink: '#1B2430', cream: '#FAF6F0', accent: '#CC7A4B', muted: '#6B7280' }
+  } } }
+</script>
+<style>body { background-color: #FAF6F0; }</style>
+</head>
+<body class="font-body text-ink antialiased min-h-screen flex items-center justify-center px-5">
+  <main class="max-w-lg text-center py-20">
+    <i class="ph ph-check-circle text-accent text-6xl"></i>
+    <h1 class="font-heading font-black text-2xl md:text-3xl mt-6 mb-6">お問い合わせありがとうございます</h1>
+    <p class="text-muted leading-loose mb-10">内容を確認のうえ、2営業日以内にご入力のメールアドレスへご返信します。<br>数日たっても返信が届かない場合は、迷惑メールフォルダもご確認ください。</p>
+    <a href="./" class="inline-flex items-center gap-2 bg-ink text-cream font-medium px-7 py-3.5 rounded-full hover:bg-accent transition-colors">
+      <i class="ph ph-arrow-left"></i> トップページへ戻る
+    </a>
+  </main>
+</body>
+</html>
