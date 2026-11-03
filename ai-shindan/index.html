@@ -32,6 +32,8 @@ h1,h2,h3,.qtitle,.hero-num .big,.kpi b,header.top .brand{font-family:"Zen Kaku G
 .wrap{max-width:760px;margin:0 auto;padding:24px 16px 64px}
 header.top{display:flex;align-items:center;gap:10px;font-weight:700;font-size:15px;color:var(--sub);margin-bottom:20px}
 header.top{justify-content:space-between;flex-wrap:wrap}
+.demo-bar{background:var(--ink);color:var(--on-ink);font-size:13px;line-height:1.6;text-align:center;padding:10px 16px}
+.demo-bar a{color:inherit;font-weight:700}
 header.top .brand{color:var(--ink);text-decoration:none;font-weight:900;font-size:17px;letter-spacing:.01em}
 header.top .brand span{color:var(--brand)}
 header.top .tag{font-size:12.5px;font-weight:700;color:var(--brand-deep);background:var(--brand-soft);padding:4px 12px;border-radius:999px}
@@ -121,6 +123,7 @@ h2{font-size:19px;margin:32px 0 14px;font-weight:900}
 </style>
 </head>
 <body>
+<div id="demoBar"></div>
 <div class="wrap">
   <header class="top">
     <a class="brand" href="https://ymutoh2216-del.github.io/omakase-hp/">おまかせ<span>HP</span>制作室</a>
@@ -133,7 +136,7 @@ h2{font-size:19px;margin:32px 0 14px;font-weight:900}
 /* ============================================================
    設定（ここだけ書き換えればOK）
    ============================================================ */
-const CONFIG = {"brandName":"無料AI導入診断","formEndpoint":"https://formspree.io/f/mdeepyqj","aiEndpoint":"https://ai-shindan-comment.y-mutoh2216.workers.dev","contactEmail":"omakasehp.seisaku@gmail.com","company":{"name":"おまかせHP制作室","url":"https://ymutoh2216-del.github.io/omakase-hp/","tagline":"中小企業・個人店様向けホームページ制作"},"ctaTitle":"あなたの会社専用の「AI導入ロードマップ」を無料でお送りします","ctaText":"診断結果をもとに、最初に取り組むべき業務・ツール・導入手順をまとめた個別レポートを、おまかせHP制作室からお届けします。","ctaButton":"無料レポートを受け取る","formNote":"※ 営業目的の連絡はレポート送付と1回のご案内のみです。","replyWithin":"2営業日以内","weeksPerMonth":4.3,"realism":0.65};
+const CONFIG = {"brandName":"無料AI導入診断","formEndpoint":"https://formspree.io/f/mdeepyqj","aiEndpoint":"https://ai-shindan-comment.y-mutoh2216.workers.dev","contactEmail":"omakasehp.seisaku@gmail.com","company":{"name":"おまかせHP制作室","url":"https://ymutoh2216-del.github.io/omakase-hp/","tagline":"中小企業・個人店様向けホームページ制作"},"ctaTitle":"あなたの会社専用の「AI導入ロードマップ」を無料でお送りします","ctaText":"診断結果をもとに、最初に取り組むべき業務・ツール・導入手順をまとめた個別レポートを、おまかせHP制作室からお届けします。","ctaButton":"無料レポートを受け取る","formNote":"※ 営業目的の連絡はレポート送付と1回のご案内のみです。","replyWithin":"2営業日以内","weeksPerMonth":4.3,"realism":0.65,"demo":""};
 const DATA = {"tasks":{"doc":{"name":"メール・文書作成","tools":["ChatGPT / Claude","Gemini for Workspace","Copilot for M365"],"tip":"返信文・提案書・社内文書のたたき台をAIが作成。人はチェックと仕上げに集中。"},"data":{"name":"データ入力・転記・集計","tools":["AI-OCR","Excel Copilot","Zapier / Make"],"tip":"紙・PDFからの読み取りと転記、表計算の集計をAI-OCRと自動化ツールで置き換え。"},"inquiry":{"name":"顧客問い合わせ対応","tools":["AIチャットボット","FAQ自動生成","LINE公式 + AI"],"tip":"よくある質問はAIチャットが24時間一次対応。人は複雑な案件だけに対応。"},"meeting":{"name":"会議・議事録・情報共有","tools":["Notta / tl;dv","Zoom AI Companion","Teams Copilot"],"tip":"録音から議事録・要約・ToDoを自動生成。会議後の作業がほぼゼロに。"},"billing":{"name":"見積・請求・経理事務","tools":["freee / マネーフォワード","AI仕訳","請求書AI読取"],"tip":"請求書の読み取り・仕訳・見積作成をAI搭載クラウド会計で自動化。"}},"baseCut":{"doc":0.5,"data":0.6,"inquiry":0.4,"meeting":0.55,"billing":0.45},"industries":[{"id":"food","ic":"🍽️","name":"飲食","sp":{"name":"シフト作成・発注業務","tools":["AIシフト作成","需要予測発注"],"tip":"過去の売上・天気から発注量を予測し、シフトも自動作成。"},"ratio":{"doc":0.2,"data":0.4,"inquiry":0.3,"meeting":0.2,"billing":0.15,"special":0.25},"cut":{"special":0.45}},{"id":"retail","ic":"🛍️","name":"小売・EC","sp":{"name":"商品説明・在庫管理","tools":["AI商品説明生成","在庫予測AI"],"tip":"商品ページの説明文・画像加工・在庫予測をAIで効率化。"},"ratio":{"doc":0.4,"data":0.5,"inquiry":0.5,"meeting":0.3,"billing":0.2,"special":0.5},"cut":{"special":0.5}},{"id":"pro","ic":"⚖️","name":"士業（税理士・社労士等）","sp":{"name":"書類作成・法令/判例調査","tools":["ChatGPT / Claude","AIリーガルリサーチ","書類テンプレ自動化"],"tip":"申請書類の下書き・法令調査・顧客向け説明文をAIが補助。"},"ratio":{"doc":0.9,"data":0.7,"inquiry":0.5,"meeting":0.5,"billing":0.4,"special":0.8},"cut":{"special":0.45}},{"id":"mfg","ic":"🏭","name":"製造","sp":{"name":"日報・品質記録・手順書","tools":["音声入力日報","AI画像検品","手順書自動生成"],"tip":"音声で日報入力、手順書・品質報告書をAIが自動生成。"},"ratio":{"doc":0.35,"data":0.5,"inquiry":0.15,"meeting":0.4,"billing":0.15,"special":0.6},"cut":{"special":0.4}},{"id":"build","ic":"🏗️","name":"建設・リフォーム","sp":{"name":"施工写真整理・報告書・見積","tools":["写真整理AI","報告書自動生成","積算AI"],"tip":"現場写真の自動仕分け・報告書作成・見積のたたき台をAIで。"},"ratio":{"doc":0.4,"data":0.4,"inquiry":0.3,"meeting":0.3,"billing":0.3,"special":0.6},"cut":{"special":0.4}},{"id":"estate","ic":"🏠","name":"不動産","sp":{"name":"物件資料・広告文作成","tools":["物件紹介文AI","画像生成/加工AI","ポータル一括入稿"],"tip":"物件紹介文・チラシ・ポータル掲載文をAIが数秒で生成。"},"ratio":{"doc":0.7,"data":0.5,"inquiry":0.6,"meeting":0.3,"billing":0.2,"special":0.7},"cut":{"special":0.55}},{"id":"care","ic":"🏥","name":"医療・介護","sp":{"name":"記録・カルテ・計画書作成","tools":["音声入力記録","ケアプランAI","AI要約"],"tip":"音声で介護記録・カルテ入力、計画書の下書きをAIが作成。"},"ratio":{"doc":0.4,"data":0.5,"inquiry":0.3,"meeting":0.3,"billing":0.15,"special":0.8},"cut":{"special":0.4}},{"id":"it","ic":"💻","name":"IT・Web・サービス業","sp":{"name":"企画・資料・コンテンツ制作","tools":["Claude / ChatGPT","GitHub Copilot","Canva AI"],"tip":"企画書・提案資料・SNS投稿・コードをAIと共同作業で高速化。"},"ratio":{"doc":0.9,"data":0.5,"inquiry":0.4,"meeting":0.7,"billing":0.2,"special":0.8},"cut":{"special":0.5}}],"itLevels":[{"ic":"📄","label":"紙・FAX・電話が中心","v":0.6},{"ic":"📊","label":"Excel・メールが中心","v":0.8},{"ic":"☁️","label":"一部クラウドツールを利用","sub":"Googleドライブ、チャット等","v":0.95},{"ic":"🚀","label":"クラウド中心・AIも試している","v":1.05}]};
 
 /* ============================================================
@@ -332,6 +335,7 @@ async function loadAiComment(r){
 
 async function submitLead(e,r){
   e.preventDefault();
+  if(CONFIG.demo){ e.target.outerHTML=`<div class="done">✅ デモのため送信はされません。実際のツールでは、ここで入力された内容と診断結果が${esc(CONFIG.company.name)}にメールで届きます。</div>`; return; }
   const f=new FormData(e.target), I=ind();
   const summary = [
     `業種: ${I.name} / 従業員: 約${state.a.emp}名 / 時給: ${state.a.wage}円`,
@@ -361,6 +365,7 @@ async function submitLead(e,r){
 
 // #demo で回答サンプル入りの結果画面を表示（動作確認用）
 if(location.hash==="#demo"){state.a={industry:"pro",emp:12,wage:2800,doc:8,data:4,inquiry:4,meeting:1.5,billing:4,special:8,it:0.8};state.step=QUESTIONS.length;}
+if(CONFIG.demo){ document.getElementById("demoBar").innerHTML=`<div class="demo-bar">${CONFIG.demo}</div>`; }
 render();
 </script>
 </body>
