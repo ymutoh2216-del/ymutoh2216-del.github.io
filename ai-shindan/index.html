@@ -3,7 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AI導入診断</title>
+<title>無料AI導入診断｜おまかせHP制作室</title>
+<meta property="og:title" content="無料AI導入診断｜おまかせHP制作室">
+<meta property="og:description" content="10問・約3分で、AIで減らせる業務時間と年間の金額インパクトを業種別に試算。AIの所感コメント付き・登録不要。">
+<meta property="og:url" content="https://ymutoh2216-del.github.io/ai-shindan/">
 <meta name="description" content="10問・3分で、あなたの会社でAIが削減できる時間と金額インパクトを診断します。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -24,7 +27,11 @@
 body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans JP",system-ui,sans-serif;line-height:1.8;-webkit-font-smoothing:antialiased}
 .wrap{max-width:760px;margin:0 auto;padding:24px 16px 64px}
 header.top{display:flex;align-items:center;gap:10px;font-weight:700;font-size:15px;color:var(--sub);margin-bottom:20px}
-header.top .logo{width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,var(--brand),var(--brand2));display:grid;place-items:center;color:#fff;font-size:14px}
+header.top{justify-content:space-between;flex-wrap:wrap}
+header.top .brand{color:var(--ink);text-decoration:none;font-weight:900;font-size:17px;letter-spacing:.01em}
+header.top .brand span{color:#CC7A4B}
+header.top .tag{font-size:12.5px;font-weight:700;color:var(--brand);background:var(--brand-soft);padding:4px 12px;border-radius:999px}
+.foot a{color:inherit}
 .card{background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:32px 28px}
 @media (max-width:520px){.card{padding:24px 18px}}
 h1{font-size:clamp(26px,5.5vw,38px);line-height:1.4;margin:8px 0 16px;font-weight:900;letter-spacing:.01em}
@@ -108,7 +115,10 @@ h2{font-size:19px;margin:32px 0 14px;font-weight:900}
 </head>
 <body>
 <div class="wrap">
-  <header class="top"><div class="logo">AI</div><span id="brandName"></span></header>
+  <header class="top">
+    <a class="brand" href="https://ymutoh2216-del.github.io/omakase-hp/">おまかせ<span>HP</span>制作室</a>
+    <span class="tag" id="brandName"></span>
+  </header>
   <main class="card" id="app"></main>
 </div>
 
@@ -117,15 +127,15 @@ h2{font-size:19px;margin:32px 0 14px;font-weight:900}
    設定（ここだけ書き換えればOK）
    ============================================================ */
 const CONFIG = {
-  brandName: "AI導入診断",
+  brandName: "無料AI導入診断",
   // FormspreeのフォームURL（例: "https://formspree.io/f/abcdwxyz"）
   // 空のままだとメールソフト起動(mailto)で代用
   formEndpoint: "https://formspree.io/f/mdeepyqj",
   // AI所感の中継サーバー（Cloudflare Workers）のURL。空ならボタンを表示しない
   aiEndpoint: "https://ai-shindan-comment.y-mutoh2216.workers.dev",
-  contactEmail: "y.mutoh2216@gmail.com",
+  contactEmail: "omakasehp.seisaku@gmail.com",
   ctaTitle: "あなたの会社専用の「AI導入ロードマップ」を無料でお送りします",
-  ctaText: "診断結果をもとに、最初に取り組むべき業務・ツール・導入手順をまとめた個別レポートをお届けします。",
+  ctaText: "診断結果をもとに、最初に取り組むべき業務・ツール・導入手順をまとめた個別レポートを、おまかせHP制作室からお届けします。",
   weeksPerMonth: 4.3,
   // 控えめ係数：ツールが全員に定着しない・慣れるまでの時間などを見込んで理論値に掛ける
   realism: 0.65,
@@ -214,6 +224,7 @@ function renderStart(){
   $app.innerHTML = `<div class="fade">
     <h1>うちの会社、<br><span class="grad">AIで何が効率化できる？</span></h1>
     <p class="lead">10問の質問に答えるだけで、AIで削減できる<b>業務時間</b>と<b>年間の金額インパクト</b>を業種別に試算します。</p>
+    <p class="lead" style="margin-top:-12px;font-size:14px">提供：<a href="https://ymutoh2216-del.github.io/omakase-hp/" style="color:inherit">おまかせHP制作室</a>（中小企業・個人店様向けホームページ制作）</p>
     <ul class="chips"><li>⏱ 約3分</li><li>📝 全10問</li><li>💰 金額で効果がわかる</li><li>🆓 無料・登録不要</li></ul>
     <button class="btn block" id="go">無料で診断をはじめる →</button>
   </div>`;
@@ -317,7 +328,7 @@ function renderResult(){
       <button class="btn" onclick="window.print()">🖨 結果を保存（PDF）</button>
       <button class="btn" id="retry">↻ もう一度診断する</button>
     </div>
-    <p class="foot">※ 本試算は、業種別の業務従事割合とAI活用時の一般的な削減率に、社内定着率${Math.round(CONFIG.realism*100)}%を掛けた控えめな概算です。実際の効果は業務内容・ツール・運用により異なります。月=${CONFIG.weeksPerMonth}週、フルタイム=月160時間で換算。</p>
+    <p class="foot">※ 本試算は、業種別の業務従事割合とAI活用時の一般的な削減率に、社内定着率${Math.round(CONFIG.realism*100)}%を掛けた控えめな概算です。実際の効果は業務内容・ツール・運用により異なります。月=${CONFIG.weeksPerMonth}週、フルタイム=月160時間で換算。<br>運営：<a href="https://ymutoh2216-del.github.io/omakase-hp/">おまかせHP制作室</a>（ホームページ制作・更新代行）</p>
   </div>`;
 
   // アニメーション
@@ -374,7 +385,7 @@ async function submitLead(e,r){
       const body=`会社名: ${f.get("company")}\nお名前: ${f.get("name")}\nメール: ${f.get("email")}\n\n${summary}`;
       location.href=`mailto:${CONFIG.contactEmail}?subject=${encodeURIComponent("【AI導入診断】レポート希望")}&body=${encodeURIComponent(body)}`;
     }
-    e.target.outerHTML=`<div class="done">✅ ありがとうございます！${esc(f.get("name"))}様宛に、2営業日以内にレポートをお送りします。</div>`;
+    e.target.outerHTML=`<div class="done">✅ ありがとうございます！${esc(f.get("name"))}様宛に、おまかせHP制作室より2営業日以内にレポートをお送りします。</div>`;
   }catch(err){
     btn.disabled=false; btn.textContent="送信に失敗しました。もう一度お試しください";
   }
