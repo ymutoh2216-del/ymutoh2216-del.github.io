@@ -9,28 +9,23 @@
 <meta property="og:url" content="https://ymutoh2216-del.github.io/ai-shindan/">
 <meta name="description" content="10問・3分で、あなたの会社でAIが削減できる時間と金額インパクトを診断します。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
 <style>
+/* おまかせHP制作室と同じ配色（ink / cream / accent / accentSoft / muted） */
 :root{
-  --bg:#f6f7fb; --card:#fff; --ink:#1a1f36; --sub:#5b6178; --line:#e3e6ef;
-  --brand:#2f5bff; --brand2:#7a4dff; --brand-soft:#eef2ff; --good:#0f9d6b; --warn:#e8890c;
-  --shadow:0 10px 30px rgba(26,31,54,.08);
-}
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --bg:#0f1220; --card:#181c2e; --ink:#eef0f8; --sub:#a3a9c2; --line:#2a3048;
-    --brand:#6d8bff; --brand2:#a07dff; --brand-soft:#1f2645; --good:#3ccf97; --warn:#ffb14a;
-    --shadow:0 10px 30px rgba(0,0,0,.35);
-  }
+  --bg:#FAF6F0; --card:#fff; --ink:#1B2430; --sub:#6B7280; --line:#E9E2D8;
+  --brand:#CC7A4B; --brand2:#B9673A; --brand-deep:#A65A2E; --brand-soft:#F2E3D5; --good:#2F7D5B; --warn:#CC7A4B;
+  --shadow:0 10px 30px -12px rgba(27,36,48,.15);
 }
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans JP",system-ui,sans-serif;line-height:1.8;-webkit-font-smoothing:antialiased}
+h1,h2,h3,.qtitle,.hero-num .big,.kpi b,header.top .brand{font-family:"Zen Kaku Gothic New","Noto Sans JP",sans-serif}
 .wrap{max-width:760px;margin:0 auto;padding:24px 16px 64px}
 header.top{display:flex;align-items:center;gap:10px;font-weight:700;font-size:15px;color:var(--sub);margin-bottom:20px}
 header.top{justify-content:space-between;flex-wrap:wrap}
 header.top .brand{color:var(--ink);text-decoration:none;font-weight:900;font-size:17px;letter-spacing:.01em}
 header.top .brand span{color:#CC7A4B}
-header.top .tag{font-size:12.5px;font-weight:700;color:var(--brand);background:var(--brand-soft);padding:4px 12px;border-radius:999px}
+header.top .tag{font-size:12.5px;font-weight:700;color:var(--brand-deep);background:var(--brand-soft);padding:4px 12px;border-radius:999px}
 .foot a{color:inherit}
 .card{background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:32px 28px}
 @media (max-width:520px){.card{padding:24px 18px}}
@@ -38,9 +33,9 @@ h1{font-size:clamp(26px,5.5vw,38px);line-height:1.4;margin:8px 0 16px;font-weigh
 h1 .grad{background:linear-gradient(90deg,var(--brand),var(--brand2));-webkit-background-clip:text;background-clip:text;color:transparent}
 .lead{color:var(--sub);font-size:16px;margin:0 0 24px}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 28px;padding:0;list-style:none}
-.chips li{background:var(--brand-soft);color:var(--brand);font-weight:700;font-size:13px;padding:6px 12px;border-radius:999px}
-.btn{appearance:none;border:0;cursor:pointer;font:inherit;font-weight:700;border-radius:14px;padding:16px 28px;font-size:17px;background:linear-gradient(90deg,var(--brand),var(--brand2));color:#fff;box-shadow:0 8px 20px rgba(47,91,255,.3);transition:transform .15s}
-.btn:hover{transform:translateY(-2px)}
+.chips li{background:var(--brand-soft);color:var(--brand-deep);font-weight:700;font-size:13px;padding:6px 12px;border-radius:999px}
+.btn{appearance:none;border:0;cursor:pointer;font:inherit;font-weight:700;border-radius:999px;padding:16px 28px;font-size:17px;background:var(--ink);color:#FAF6F0;box-shadow:0 10px 24px -10px rgba(27,36,48,.45);transition:transform .15s,background .2s}
+.btn:hover{transform:translateY(-2px);background:var(--brand)}
 .btn.block{width:100%}
 .btn.ghost{background:transparent;color:var(--sub);box-shadow:none;padding:10px 4px;font-size:15px}
 .btn:disabled{opacity:.5;cursor:default;transform:none}
@@ -69,7 +64,7 @@ h1 .grad{background:linear-gradient(90deg,var(--brand),var(--brand2));-webkit-ba
 .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:24px 0}
 @media (max-width:520px){.kpis{grid-template-columns:1fr}}
 .kpi{background:var(--brand-soft);border-radius:14px;padding:14px;text-align:center}
-.kpi b{display:block;font-size:22px;font-weight:900;color:var(--brand)}
+.kpi b{display:block;font-size:22px;font-weight:900;color:var(--brand-deep)}
 .kpi span{font-size:12.5px;color:var(--sub)}
 h2{font-size:19px;margin:32px 0 14px;font-weight:900}
 .bars{display:grid;gap:12px}
@@ -80,7 +75,7 @@ h2{font-size:19px;margin:32px 0 14px;font-weight:900}
 .recs{display:grid;gap:12px}
 .rec{border:1px solid var(--line);border-radius:14px;padding:16px}
 .rec .h{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
-.rec .rank{background:var(--brand);color:#fff;border-radius:8px;font-size:12px;font-weight:700;padding:2px 8px}
+.rec .rank{background:var(--ink);color:#FAF6F0;border-radius:8px;font-size:12px;font-weight:700;padding:2px 8px}
 .rec .t{font-weight:700}
 .rec .yen{margin-left:auto;color:var(--good);font-weight:700;font-size:14px}
 .rec p{margin:6px 0 0;color:var(--sub);font-size:14px}
@@ -99,17 +94,20 @@ h2{font-size:19px;margin:32px 0 14px;font-weight:900}
 .ai-loading .dot{width:7px;height:7px;border-radius:50%;background:var(--brand);animation:blink 1.2s infinite}
 .ai-loading .dot:nth-child(2){animation-delay:.2s}.ai-loading .dot:nth-child(3){animation-delay:.4s}
 @keyframes blink{0%,100%{opacity:.2}50%{opacity:1}}
-.cta{margin-top:32px;background:linear-gradient(135deg,var(--brand),var(--brand2));color:#fff;border-radius:18px;padding:26px 22px}
+.cta{margin-top:32px;background:var(--ink);color:#FAF6F0;border-radius:18px;padding:26px 22px}
 .cta h3{margin:0 0 6px;font-size:20px}
 .cta p{margin:0 0 16px;opacity:.92;font-size:14px}
 .cta form{display:grid;gap:10px}
 .cta input{font:inherit;font-size:16px;padding:13px 14px;border-radius:12px;border:0;width:100%;color:#1a1f36}
-.cta .btn{background:#fff;color:var(--brand);box-shadow:none}
+.cta .btn{background:var(--brand);color:var(--ink);box-shadow:none}
+.cta .btn:hover{background:#D98C5F}
+.cta h3{color:#fff}
 .cta .note{font-size:12px;opacity:.8;margin:4px 0 0}
 .cta .done{background:rgba(255,255,255,.15);border-radius:12px;padding:14px;font-weight:700}
 .foot{font-size:12px;color:var(--sub);margin-top:24px;line-height:1.7}
 .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
-.actions .btn{font-size:14px;padding:10px 16px;background:var(--brand-soft);color:var(--brand);box-shadow:none}
+.actions .btn{font-size:14px;padding:10px 18px;background:var(--brand-soft);color:var(--brand-deep);box-shadow:none}
+.actions .btn:hover{background:var(--brand);color:#fff}
 @media print{.cta,.actions,header.top{display:none}.card{box-shadow:none;border:0}body{background:#fff}}
 </style>
 </head>
