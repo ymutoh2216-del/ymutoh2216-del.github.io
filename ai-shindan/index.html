@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI導入診断</title>
+<meta name="description" content="10問・3分で、あなたの会社でAIが削減できる時間と金額インパクトを診断します。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f6f7fb; --card:#fff; --ink:#1a1f36; --sub:#5b6178; --line:#e3e6ef;
+  --brand:#2f5bff; --brand2:#7a4dff; --brand-soft:#eef2ff; --good:#0f9d6b; --warn:#e8890c;
+  --shadow:0 10px 30px rgba(26,31,54,.08);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f1220; --card:#181c2e; --ink:#eef0f8; --sub:#a3a9c2; --line:#2a3048;
+    --brand:#6d8bff; --brand2:#a07dff; --brand-soft:#1f2645; --good:#3ccf97; --warn:#ffb14a;
+    --shadow:0 10px 30px rgba(0,0,0,.35);
+  }
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans JP",system-ui,sans-serif;line-height:1.8;-webkit-font-smoothing:antialiased}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 64px}
+header.top{display:flex;align-items:center;gap:10px;font-weight:700;font-size:15px;color:var(--sub);margin-bottom:20px}
+header.top .logo{width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,var(--brand),var(--brand2));display:grid;place-items:center;color:#fff;font-size:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:32px 28px}
+@media (max-width:520px){.card{padding:24px 18px}}
+h1{font-size:clamp(26px,5.5vw,38px);line-height:1.4;margin:8px 0 16px;font-weight:900;letter-spacing:.01em}
+h1 .grad{background:linear-gradient(90deg,var(--brand),var(--brand2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{color:var(--sub);font-size:16px;margin:0 0 24px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 28px;padding:0;list-style:none}
+.chips li{background:var(--brand-soft);color:var(--brand);font-weight:700;font-size:13px;padding:6px 12px;border-radius:999px}
+.btn{appearance:none;border:0;cursor:pointer;font:inherit;font-weight:700;border-radius:14px;padding:16px 28px;font-size:17px;background:linear-gradient(90deg,var(--brand),var(--brand2));color:#fff;box-shadow:0 8px 20px rgba(47,91,255,.3);transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.block{width:100%}
+.btn.ghost{background:transparent;color:var(--sub);box-shadow:none;padding:10px 4px;font-size:15px}
+.btn:disabled{opacity:.5;cursor:default;transform:none}
+.progress{height:8px;background:var(--line);border-radius:99px;overflow:hidden;margin-bottom:8px}
+.progress>i{display:block;height:100%;background:linear-gradient(90deg,var(--brand),var(--brand2));transition:width .35s}
+.qmeta{display:flex;justify-content:space-between;font-size:13px;color:var(--sub);margin-bottom:18px}
+.qtitle{font-size:clamp(19px,4vw,23px);font-weight:700;line-height:1.55;margin:0 0 6px}
+.qhint{color:var(--sub);font-size:14px;margin:0 0 20px}
+.opts{display:grid;gap:10px}
+.opts.grid2{grid-template-columns:1fr 1fr}
+@media (max-width:520px){.opts.grid2{grid-template-columns:1fr}}
+.opt{display:flex;align-items:center;gap:12px;text-align:left;width:100%;background:var(--card);border:2px solid var(--line);border-radius:14px;padding:14px 16px;font:inherit;font-size:16px;color:var(--ink);cursor:pointer;transition:border-color .15s,background .15s}
+.opt:hover{border-color:var(--brand)}
+.opt.sel{border-color:var(--brand);background:var(--brand-soft)}
+.opt .ic{font-size:22px;width:28px;text-align:center;flex:none}
+.opt small{display:block;color:var(--sub);font-size:12.5px;line-height:1.5}
+.nav{display:flex;justify-content:space-between;align-items:center;margin-top:18px}
+.fade{animation:fade .3s ease}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+/* result */
+.hero-num{text-align:center;padding:8px 0 4px}
+.hero-num .label{color:var(--sub);font-size:14px;font-weight:700}
+.hero-num .big{font-size:clamp(40px,10vw,64px);font-weight:900;line-height:1.2;background:linear-gradient(90deg,var(--brand),var(--brand2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-num .big span{font-size:.45em}
+.hero-num .range{color:var(--sub);font-size:13px}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:24px 0}
+@media (max-width:520px){.kpis{grid-template-columns:1fr}}
+.kpi{background:var(--brand-soft);border-radius:14px;padding:14px;text-align:center}
+.kpi b{display:block;font-size:22px;font-weight:900;color:var(--brand)}
+.kpi span{font-size:12.5px;color:var(--sub)}
+h2{font-size:19px;margin:32px 0 14px;font-weight:900}
+.bars{display:grid;gap:12px}
+.bar .row{display:flex;justify-content:space-between;font-size:14px;gap:8px}
+.bar .row b{white-space:nowrap}
+.bar .track{height:12px;background:var(--line);border-radius:99px;overflow:hidden;margin-top:4px}
+.bar .track i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--brand),var(--brand2));border-radius:99px;transition:width 1s ease}
+.recs{display:grid;gap:12px}
+.rec{border:1px solid var(--line);border-radius:14px;padding:16px}
+.rec .h{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.rec .rank{background:var(--brand);color:#fff;border-radius:8px;font-size:12px;font-weight:700;padding:2px 8px}
+.rec .t{font-weight:700}
+.rec .yen{margin-left:auto;color:var(--good);font-weight:700;font-size:14px}
+.rec p{margin:6px 0 0;color:var(--sub);font-size:14px}
+.rec .tools{margin-top:8px;display:flex;flex-wrap:wrap;gap:6px}
+.rec .tools span{font-size:12px;border:1px solid var(--line);border-radius:99px;padding:2px 10px;color:var(--sub)}
+.ready{display:flex;gap:18px;align-items:center;border:1px solid var(--line);border-radius:14px;padding:16px}
+.gauge{--p:50;width:92px;height:92px;border-radius:50%;flex:none;display:grid;place-items:center;background:conic-gradient(var(--brand) calc(var(--p)*1%),var(--line) 0)}
+.gauge b{width:72px;height:72px;border-radius:50%;background:var(--card);display:grid;place-items:center;font-size:22px;font-weight:900}
+.ready p{margin:0;font-size:14px;color:var(--sub)}
+.ready .lv{font-weight:900;color:var(--ink);font-size:16px}
+.ai{border:1px solid var(--line);border-radius:14px;padding:16px}
+.ai-text p{margin:0 0 12px;font-size:15px}
+.ai-text p:last-child{margin-bottom:0}
+.ai-note{font-size:12.5px;color:var(--sub);margin:10px 0 0}
+.ai-loading{color:var(--sub);font-size:14px;display:flex;align-items:center;gap:6px}
+.ai-loading .dot{width:7px;height:7px;border-radius:50%;background:var(--brand);animation:blink 1.2s infinite}
+.ai-loading .dot:nth-child(2){animation-delay:.2s}.ai-loading .dot:nth-child(3){animation-delay:.4s}
+@keyframes blink{0%,100%{opacity:.2}50%{opacity:1}}
+.cta{margin-top:32px;background:linear-gradient(135deg,var(--brand),var(--brand2));color:#fff;border-radius:18px;padding:26px 22px}
+.cta h3{margin:0 0 6px;font-size:20px}
+.cta p{margin:0 0 16px;opacity:.92;font-size:14px}
+.cta form{display:grid;gap:10px}
+.cta input{font:inherit;font-size:16px;padding:13px 14px;border-radius:12px;border:0;width:100%;color:#1a1f36}
+.cta .btn{background:#fff;color:var(--brand);box-shadow:none}
+.cta .note{font-size:12px;opacity:.8;margin:4px 0 0}
+.cta .done{background:rgba(255,255,255,.15);border-radius:12px;padding:14px;font-weight:700}
+.foot{font-size:12px;color:var(--sub);margin-top:24px;line-height:1.7}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.actions .btn{font-size:14px;padding:10px 16px;background:var(--brand-soft);color:var(--brand);box-shadow:none}
+@media print{.cta,.actions,header.top{display:none}.card{box-shadow:none;border:0}body{background:#fff}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top"><div class="logo">AI</div><span id="brandName"></span></header>
+  <main class="card" id="app"></main>
+</div>
+
+<script>
+/* ============================================================
+   設定（ここだけ書き換えればOK）
+   ============================================================ */
+const CONFIG = {
+  brandName: "AI導入診断",
+  // FormspreeのフォームURL（例: "https://formspree.io/f/abcdwxyz"）
+  // 空のままだとメールソフト起動(mailto)で代用
+  formEndpoint: "https://formspree.io/f/mdeepyqj",
+  // AI所感の中継サーバー（Cloudflare Workers）のURL。空ならボタンを表示しない
+  aiEndpoint: "https://ai-shindan-comment.y-mutoh2216.workers.dev",
+  contactEmail: "y.mutoh2216@gmail.com",
+  ctaTitle: "あなたの会社専用の「AI導入ロードマップ」を無料でお送りします",
+  ctaText: "診断結果をもとに、最初に取り組むべき業務・ツール・導入手順をまとめた個別レポートをお届けします。",
+  weeksPerMonth: 4.3,
+  // 控えめ係数：ツールが全員に定着しない・慣れるまでの時間などを見込んで理論値に掛ける
+  realism: 0.65,
+};
+
+/* ============================================================
+   業種マスタ
+   ratio = その業務を担う社員の割合 / cut = AIで削減できる割合
+   ============================================================ */
+const TASKS = {
+  doc:     {name:"メール・文書作成", tools:["ChatGPT / Claude","Gemini for Workspace","Copilot for M365"], tip:"返信文・提案書・社内文書のたたき台をAIが作成。人はチェックと仕上げに集中。"},
+  data:    {name:"データ入力・転記・集計", tools:["AI-OCR","Excel Copilot","Zapier / Make"], tip:"紙・PDFからの読み取りと転記、表計算の集計をAI-OCRと自動化ツールで置き換え。"},
+  inquiry: {name:"顧客問い合わせ対応", tools:["AIチャットボット","FAQ自動生成","LINE公式 + AI"], tip:"よくある質問はAIチャットが24時間一次対応。人は複雑な案件だけに対応。"},
+  meeting: {name:"会議・議事録・情報共有", tools:["Notta / tl;dv","Zoom AI Companion","Teams Copilot"], tip:"録音から議事録・要約・ToDoを自動生成。会議後の作業がほぼゼロに。"},
+  billing: {name:"見積・請求・経理事務", tools:["freee / マネーフォワード","AI仕訳","請求書AI読取"], tip:"請求書の読み取り・仕訳・見積作成をAI搭載クラウド会計で自動化。"},
+  special: {name:"", tools:[], tip:""},
+};
+
+const INDUSTRIES = [
+  {id:"food",  ic:"🍽️", name:"飲食",            sp:{name:"シフト作成・発注業務", tools:["AIシフト作成","需要予測発注"], tip:"過去の売上・天気から発注量を予測し、シフトも自動作成。"},
+    ratio:{doc:.2,data:.4,inquiry:.3,meeting:.2,billing:.15,special:.25}, cut:{special:.45}},
+  {id:"retail",ic:"🛍️", name:"小売・EC",         sp:{name:"商品説明・在庫管理", tools:["AI商品説明生成","在庫予測AI"], tip:"商品ページの説明文・画像加工・在庫予測をAIで効率化。"},
+    ratio:{doc:.4,data:.5,inquiry:.5,meeting:.3,billing:.2,special:.5}, cut:{special:.5}},
+  {id:"pro",   ic:"⚖️", name:"士業（税理士・社労士等）", sp:{name:"書類作成・法令/判例調査", tools:["ChatGPT / Claude","AIリーガルリサーチ","書類テンプレ自動化"], tip:"申請書類の下書き・法令調査・顧客向け説明文をAIが補助。"},
+    ratio:{doc:.9,data:.7,inquiry:.5,meeting:.5,billing:.4,special:.8}, cut:{special:.45}},
+  {id:"mfg",   ic:"🏭", name:"製造",            sp:{name:"日報・品質記録・手順書", tools:["音声入力日報","AI画像検品","手順書自動生成"], tip:"音声で日報入力、手順書・品質報告書をAIが自動生成。"},
+    ratio:{doc:.35,data:.5,inquiry:.15,meeting:.4,billing:.15,special:.6}, cut:{special:.4}},
+  {id:"build", ic:"🏗️", name:"建設・リフォーム",   sp:{name:"施工写真整理・報告書・見積", tools:["写真整理AI","報告書自動生成","積算AI"], tip:"現場写真の自動仕分け・報告書作成・見積のたたき台をAIで。"},
+    ratio:{doc:.4,data:.4,inquiry:.3,meeting:.3,billing:.3,special:.6}, cut:{special:.4}},
+  {id:"estate",ic:"🏠", name:"不動産",          sp:{name:"物件資料・広告文作成", tools:["物件紹介文AI","画像生成/加工AI","ポータル一括入稿"], tip:"物件紹介文・チラシ・ポータル掲載文をAIが数秒で生成。"},
+    ratio:{doc:.7,data:.5,inquiry:.6,meeting:.3,billing:.2,special:.7}, cut:{special:.55}},
+  {id:"care",  ic:"🏥", name:"医療・介護",       sp:{name:"記録・カルテ・計画書作成", tools:["音声入力記録","ケアプランAI","AI要約"], tip:"音声で介護記録・カルテ入力、計画書の下書きをAIが作成。"},
+    ratio:{doc:.4,data:.5,inquiry:.3,meeting:.3,billing:.15,special:.8}, cut:{special:.4}},
+  {id:"it",    ic:"💻", name:"IT・Web・サービス業", sp:{name:"企画・資料・コンテンツ制作", tools:["Claude / ChatGPT","GitHub Copilot","Canva AI"], tip:"企画書・提案資料・SNS投稿・コードをAIと共同作業で高速化。"},
+    ratio:{doc:.9,data:.5,inquiry:.4,meeting:.7,billing:.2,special:.8}, cut:{special:.5}},
+];
+const BASE_CUT = {doc:.5,data:.6,inquiry:.4,meeting:.55,billing:.45};
+
+const HOURS_OPTS = [
+  {ic:"⚪", label:"ほとんどない", sub:"週1時間未満", v:0.5},
+  {ic:"🟢", label:"週1〜2時間",   sub:"", v:1.5},
+  {ic:"🟡", label:"週3〜5時間",   sub:"", v:4},
+  {ic:"🟠", label:"週6〜10時間",  sub:"", v:8},
+  {ic:"🔴", label:"週10時間以上", sub:"", v:13},
+];
+const taskQ = (key, title, hint) => ({key, title, hint:hint||"担当している社員1人あたりの、1週間の平均時間でお答えください。", opts:HOURS_OPTS});
+
+const QUESTIONS = [
+  {key:"industry", title:"業種を教えてください", hint:"業種に合わせて削減効果を計算します。", grid:true,
+    opts:INDUSTRIES.map(i=>({ic:i.ic,label:i.name,v:i.id}))},
+  {key:"emp", title:"従業員数（パート・アルバイト含む）は？", opts:[
+    {ic:"👤",label:"1〜5名",v:3},{ic:"👥",label:"6〜20名",v:12},{ic:"🏢",label:"21〜50名",v:35},
+    {ic:"🏬",label:"51〜100名",v:75},{ic:"🏙️",label:"101〜300名",v:180}]},
+  {key:"wage", title:"社員1人あたりの平均時給は？", hint:"給与＋社会保険料などを含めた「人件費ベース」の目安です。わからなければ近いものでOK。", opts:[
+    {ic:"💴",label:"1,500円前後",sub:"パート中心",v:1500},{ic:"💴",label:"2,000円前後",sub:"月給25万円程度",v:2000},
+    {ic:"💴",label:"2,800円前後",sub:"月給35万円程度",v:2800},{ic:"💴",label:"3,500円前後",sub:"月給45万円程度",v:3500},
+    {ic:"💴",label:"5,000円以上",sub:"専門職・管理職中心",v:5000}]},
+  taskQ("doc","メールの返信や文書・資料作成に、週何時間かかっていますか？"),
+  taskQ("data","データ入力・転記・Excel集計に、週何時間かかっていますか？"),
+  taskQ("inquiry","お客様からの電話・メール・LINEの問い合わせ対応に、週何時間かかっていますか？"),
+  taskQ("meeting","会議・議事録作成・社内の情報共有に、週何時間かかっていますか？"),
+  taskQ("billing","見積書・請求書・経費精算などの事務に、週何時間かかっていますか？"),
+  {...taskQ("special",""), dynamic:true},
+  {key:"it", title:"社内のITツール活用度に近いものは？", hint:"AI導入のしやすさ（準備度）の判定に使います。", opts:[
+    {ic:"📄",label:"紙・FAX・電話が中心",v:0.6},{ic:"📊",label:"Excel・メールが中心",v:0.8},
+    {ic:"☁️",label:"一部クラウドツールを利用",sub:"Googleドライブ、チャット等",v:0.95},
+    {ic:"🚀",label:"クラウド中心・AIも試している",v:1.05}]},
+];
+
+/* ============================================================ */
+const state = {step:-1, a:{}};
+const $app = document.getElementById("app");
+document.getElementById("brandName").textContent = CONFIG.brandName;
+const yen = n => Math.round(n).toLocaleString("ja-JP");
+const man = n => n>=10000 ? (Math.round(n/1000)/10).toLocaleString("ja-JP")+"<span>万円</span>" : yen(n)+"<span>円</span>";
+const esc = s => String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const ind = () => INDUSTRIES.find(i=>i.id===state.a.industry) || INDUSTRIES[0];
+
+function render(){
+  if(state.step<0) return renderStart();
+  if(state.step>=QUESTIONS.length) return renderResult();
+  renderQ();
+}
+
+function renderStart(){
+  $app.innerHTML = `<div class="fade">
+    <h1>うちの会社、<br><span class="grad">AIで何が効率化できる？</span></h1>
+    <p class="lead">10問の質問に答えるだけで、AIで削減できる<b>業務時間</b>と<b>年間の金額インパクト</b>を業種別に試算します。</p>
+    <ul class="chips"><li>⏱ 約3分</li><li>📝 全10問</li><li>💰 金額で効果がわかる</li><li>🆓 無料・登録不要</li></ul>
+    <button class="btn block" id="go">無料で診断をはじめる →</button>
+  </div>`;
+  document.getElementById("go").onclick = ()=>{state.step=0;render();};
+}
+
+function renderQ(){
+  const q = QUESTIONS[state.step];
+  let title=q.title, hint=q.hint;
+  if(q.dynamic){ title=`${ind().sp.name}に、週何時間かかっていますか？`; }
+  const cur = state.a[q.key];
+  $app.innerHTML = `<div class="fade">
+    <div class="progress"><i style="width:${(state.step)/QUESTIONS.length*100}%"></i></div>
+    <div class="qmeta"><span>質問 ${state.step+1} / ${QUESTIONS.length}</span><span>${Math.round(state.step/QUESTIONS.length*100)}%</span></div>
+    <p class="qtitle">${esc(title)}</p>
+    ${hint?`<p class="qhint">${esc(hint)}</p>`:""}
+    <div class="opts ${q.grid?"grid2":""}">
+      ${q.opts.map((o,i)=>`<button class="opt ${cur===o.v?"sel":""}" data-i="${i}"><span class="ic">${o.ic}</span><span>${esc(o.label)}${o.sub?`<small>${esc(o.sub)}</small>`:""}</span></button>`).join("")}
+    </div>
+    <div class="nav"><button class="btn ghost" id="back">← 戻る</button><span></span></div>
+  </div>`;
+  $app.querySelectorAll(".opt").forEach(b=>b.onclick=()=>{
+    state.a[q.key]=q.opts[+b.dataset.i].v;
+    b.classList.add("sel");
+    setTimeout(()=>{state.step++;render();window.scrollTo({top:0,behavior:"smooth"});},180);
+  });
+  document.getElementById("back").onclick=()=>{state.step--;render();};
+}
+
+function calc(){
+  const I=ind(), A=state.a, emp=A.emp, wage=A.wage, it=A.it;
+  const items = Object.keys(TASKS).map(k=>{
+    const cut = (I.cut[k] ?? BASE_CUT[k]);
+    const staff = Math.max(1, emp*I.ratio[k]);
+    const hoursMonth = A[k]*staff*CONFIG.weeksPerMonth*cut*it*CONFIG.realism;
+    const meta = k==="special" ? I.sp : TASKS[k];
+    return {k, name:meta.name, tools:meta.tools, tip:meta.tip, hours:hoursMonth, yenMonth:hoursMonth*wage, cut};
+  }).sort((a,b)=>b.yenMonth-a.yenMonth);
+  const hours = items.reduce((s,x)=>s+x.hours,0);
+  const yenMonth = hours*wage;
+  // 準備度スコア：IT活用度ベース + 業務量の多さ（効果の出やすさ）
+  const load = ["doc","data","inquiry","meeting","billing","special"].reduce((s,k)=>s+A[k],0); // 3〜78
+  const ready = Math.round(Math.min(98, (it-0.45)/0.6*70 + Math.min(28, load/2)));
+  return {items, hours, yenMonth, yenYear:yenMonth*12, ready, fte:hours/160};
+}
+
+function readyLabel(s){
+  if(s>=75) return ["導入加速フェーズ","すぐに成果が出やすい状態です。複数業務への横展開まで一気に進められます。"];
+  if(s>=50) return ["スモールスタート適齢期","まず1業務に絞って試すと、短期間で効果を実感できます。"];
+  return ["土台づくりフェーズ","紙・手作業のデジタル化とセットで進めると、効果が大きく伸びます。"];
+}
+
+function renderResult(){
+  const r = calc(), I=ind(), [lv,lvText]=readyLabel(r.ready);
+  const max = r.items[0].yenMonth||1;
+  $app.innerHTML = `<div class="fade">
+    <div class="progress"><i style="width:100%"></i></div>
+    <div class="hero-num">
+      <div class="label">${esc(I.name)}・約${state.a.emp}名規模のあなたの会社で<br>AI導入による年間削減インパクト（試算）</div>
+      <div class="big" id="bigNum">0<span>円</span></div>
+      <div class="range">AIの社内定着率${Math.round(CONFIG.realism*100)}%を見込んだ控えめな試算です</div>
+    </div>
+    <div class="kpis">
+      <div class="kpi"><b>${yen(r.hours)}時間</b><span>毎月削減できる時間</span></div>
+      <div class="kpi"><b>${man(r.yenMonth).replace(/<\/?span>/g,"")}</b><span>毎月のコスト削減</span></div>
+      <div class="kpi"><b>${r.fte>=0.1?r.fte.toFixed(1):"0.1未満"}人分</b><span>フルタイム換算の工数</span></div>
+    </div>
+
+    <h2>📊 業務別の削減効果（月額）</h2>
+    <div class="bars">
+      ${r.items.map(x=>`<div class="bar"><div class="row"><span>${esc(x.name)}</span><b>${yen(x.yenMonth)}円 / ${yen(x.hours)}h</b></div><div class="track"><i data-w="${x.yenMonth/max*100}"></i></div></div>`).join("")}
+    </div>
+
+    <h2>🎯 優先して取り組むべきAI活用 TOP3</h2>
+    <div class="recs">
+      ${r.items.slice(0,3).map((x,i)=>`<div class="rec"><div class="h"><span class="rank">No.${i+1}</span><span class="t">${esc(x.name)}</span><span class="yen">年 ${yen(x.yenMonth*12/10000)}万円</span></div>
+        <p>${esc(x.tip)}（想定削減率 約${Math.round(x.cut*100)}%）</p>
+        <div class="tools">${x.tools.map(t=>`<span>${esc(t)}</span>`).join("")}</div></div>`).join("")}
+    </div>
+
+    <h2>🧭 AI導入準備度</h2>
+    <div class="ready"><div class="gauge" style="--p:${r.ready}"><b>${r.ready}</b></div>
+      <div><div class="lv">${lv}</div><p>${lvText}</p></div></div>
+
+    ${CONFIG.aiEndpoint?`<h2>🤖 AIからの所感</h2>
+    <div class="ai" id="ai"><button class="btn block" id="aiBtn">AIの所感を見る</button></div>`:""}
+
+    <div class="cta" id="cta">
+      <h3>${esc(CONFIG.ctaTitle)}</h3>
+      <p>${esc(CONFIG.ctaText)}</p>
+      <form id="lead">
+        <input name="company" placeholder="会社名" required autocomplete="organization">
+        <input name="name" placeholder="お名前" required autocomplete="name">
+        <input name="email" type="email" placeholder="メールアドレス" required autocomplete="email">
+        <button class="btn block" type="submit">無料レポートを受け取る</button>
+        <p class="note">※ 営業目的の連絡はレポート送付と1回のご案内のみです。</p>
+      </form>
+    </div>
+
+    <div class="actions">
+      <button class="btn" onclick="window.print()">🖨 結果を保存（PDF）</button>
+      <button class="btn" id="retry">↻ もう一度診断する</button>
+    </div>
+    <p class="foot">※ 本試算は、業種別の業務従事割合とAI活用時の一般的な削減率に、社内定着率${Math.round(CONFIG.realism*100)}%を掛けた控えめな概算です。実際の効果は業務内容・ツール・運用により異なります。月=${CONFIG.weeksPerMonth}週、フルタイム=月160時間で換算。</p>
+  </div>`;
+
+  // アニメーション
+  const el=document.getElementById("bigNum"), target=r.yenYear, t0=performance.now();
+  (function tick(t){const p=Math.min(1,(t-t0)/1200), e=1-Math.pow(1-p,3); el.innerHTML=man(target*e); if(p<1) requestAnimationFrame(tick);})(t0);
+  requestAnimationFrame(()=>setTimeout(()=>$app.querySelectorAll(".track i").forEach(i=>i.style.width=i.dataset.w+"%"),50));
+
+  document.getElementById("retry").onclick=()=>{state.step=-1;state.a={};render();window.scrollTo(0,0);};
+  document.getElementById("lead").onsubmit=e=>submitLead(e,r);
+  const aiBtn=document.getElementById("aiBtn"); if(aiBtn) aiBtn.onclick=()=>loadAiComment(r);
+}
+
+const IT_LABEL = {0.6:"紙・FAX・電話が中心",0.8:"Excel・メールが中心",0.95:"一部クラウドツールを利用",1.05:"クラウド中心・AIも試している"};
+async function loadAiComment(r){
+  const box=document.getElementById("ai");
+  box.innerHTML=`<div class="ai-loading"><span class="dot"></span><span class="dot"></span><span class="dot"></span> AIが診断結果を読んでいます…（10〜20秒）</div>`;
+  const payload={
+    industry:ind().name, employees:state.a.emp, wage:state.a.wage, itLevel:IT_LABEL[state.a.it]||"不明",
+    readiness:r.ready, hoursMonth:r.hours, yenYear:r.yenYear,
+    tasks:r.items.map(x=>({name:x.name,hoursMonth:x.hours,yenMonth:x.yenMonth,tools:x.tools})),
+  };
+  try{
+    const res=await fetch(CONFIG.aiEndpoint,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)});
+    const data=await res.json().catch(()=>({}));
+    if(!res.ok||!data.comment) throw new Error(data.error||res.status);
+    state.aiComment=data.comment;
+    box.innerHTML=`<div class="ai-text">${data.comment.split(/\n+/).map(p=>`<p>${esc(p)}</p>`).join("")}</div><p class="ai-note">※ AIが診断結果をもとに生成したコメントです。内容は参考情報としてご覧ください。</p>`;
+  }catch(err){
+    const busy=String(err.message)==="busy"||String(err.message)==="429";
+    box.innerHTML=`<p class="ai-note">${busy?"アクセスが集中しています。1分ほど待ってから、もう一度お試しください。":"所感を取得できませんでした。時間をおいてお試しください。"}</p><button class="btn block" id="aiBtn">もう一度試す</button>`;
+    document.getElementById("aiBtn").onclick=()=>loadAiComment(r);
+  }
+}
+
+async function submitLead(e,r){
+  e.preventDefault();
+  const f=new FormData(e.target), I=ind();
+  const summary = [
+    `業種: ${I.name} / 従業員: 約${state.a.emp}名 / 時給: ${state.a.wage}円`,
+    `年間削減インパクト: ${yen(r.yenYear)}円（月${yen(r.hours)}時間）`,
+    `準備度: ${r.ready}点`,
+    `TOP3: ${r.items.slice(0,3).map(x=>x.name).join(" / ")}`,
+    state.aiComment?`AI所感:\n${state.aiComment}`:"AI所感: （未表示）",
+    `回答: ${JSON.stringify(state.a)}`,
+  ].join("\n");
+  f.append("diagnosis", summary);
+  f.append("_subject", `【AI導入診断】${f.get("company")} 様からレポート希望`);
+  const btn=e.target.querySelector("button"); btn.disabled=true; btn.textContent="送信中…";
+  try{
+    if(CONFIG.formEndpoint){
+      const res=await fetch(CONFIG.formEndpoint,{method:"POST",body:f,headers:{Accept:"application/json"}});
+      if(!res.ok) throw new Error(res.status);
+    }else{
+      const body=`会社名: ${f.get("company")}\nお名前: ${f.get("name")}\nメール: ${f.get("email")}\n\n${summary}`;
+      location.href=`mailto:${CONFIG.contactEmail}?subject=${encodeURIComponent("【AI導入診断】レポート希望")}&body=${encodeURIComponent(body)}`;
+    }
+    e.target.outerHTML=`<div class="done">✅ ありがとうございます！${esc(f.get("name"))}様宛に、2営業日以内にレポートをお送りします。</div>`;
+  }catch(err){
+    btn.disabled=false; btn.textContent="送信に失敗しました。もう一度お試しください";
+  }
+}
+
+// #demo で回答サンプル入りの結果画面を表示（動作確認用）
+if(location.hash==="#demo"){state.a={industry:"pro",emp:12,wage:2800,doc:8,data:4,inquiry:4,meeting:1.5,billing:4,special:8,it:0.8};state.step=QUESTIONS.length;}
+render();
+</script>
+</body>
+</html>
