@@ -148,7 +148,7 @@
   <section id="works" class="max-w-6xl mx-auto px-5 md:px-8 py-20 md:py-28">
     <p class="text-accent font-semibold tracking-widest text-sm mb-4">WORKS</p>
     <h2 class="font-heading font-bold text-2xl md:text-4xl mb-4">実績サンプル</h2>
-    <p class="text-muted mb-14 max-w-xl leading-relaxed">業種ごとのモックアップサイトです。実際にクリック・スクロールしてご覧いただけます(いずれも架空の実績サンプルです)。</p>
+    <p class="text-muted mb-14 max-w-xl leading-relaxed">業種ごとのモックアップサイトです。実際にクリック・スクロールしてご覧いただけます(ホームページはいずれも架空の実績サンプルです)。</p>
 
     <h3 class="font-heading font-bold text-lg mb-6 flex items-center gap-3"><span class="w-6 h-0.5 bg-accent inline-block"></span>店舗・サロン</h3>
     <div class="grid sm:grid-cols-2 gap-8">
@@ -247,6 +247,37 @@
       </a>
 
     </div>
+
+    <h3 class="font-heading font-bold text-lg mt-16 mb-6 flex items-center gap-3"><span class="w-6 h-0.5 bg-accent inline-block"></span>AIツール開発</h3>
+    <a href="../ai-shindan/" target="_blank" rel="noopener" class="group grid md:grid-cols-2 rounded-2xl overflow-hidden card-shadow bg-white">
+      <div class="bg-cream flex items-center overflow-hidden">
+        <div class="aspect-[4/3] w-full overflow-hidden">
+          <img src="works/ai-shindan.jpg" alt="AI導入診断ツールの結果画面" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null;this.src='https://ymutoh2216-del.github.io/omakase-hp/'+this.getAttribute('src')">
+        </div>
+      </div>
+      <div class="p-6 md:p-8 flex flex-col">
+        <div class="flex flex-wrap items-center gap-2">
+          <span class="text-xs font-semibold text-accent tracking-widest">Webアプリ・AI連携</span>
+          <span class="text-[11px] font-bold bg-accentSoft text-ink px-2.5 py-0.5 rounded-full">実際に稼働中</span>
+        </div>
+        <h3 class="font-heading font-bold text-xl mt-2 mb-3">AI導入診断ツール</h3>
+        <p class="text-sm text-muted leading-relaxed mb-4">10問の回答から、業種別に「AIで減らせる業務時間×時給」で年間の金額インパクトを試算するWebアプリ。結果をもとにAI（Claude）が個別の所感コメントを生成し、詳細レポートの申し込みまでつなげる集客ツールとして設計しました。</p>
+        <ul class="text-sm leading-relaxed space-y-1.5 mb-5">
+          <li class="flex gap-2"><i class="ph ph-check-circle text-accent mt-1"></i>ツールが定着しきらないことも見込んだ、控えめで誠実な試算ロジック</li>
+          <li class="flex gap-2"><i class="ph ph-check-circle text-accent mt-1"></i>APIキーを中継サーバーで保護し、呼び出し元の制限・回数制限・入力の許可リストで悪用を防止</li>
+          <li class="flex gap-2"><i class="ph ph-check-circle text-accent mt-1"></i>申し込み内容は診断結果つきでメールに自動送信</li>
+        </ul>
+        <div class="flex flex-wrap gap-2 mt-auto">
+          <span class="text-xs border border-ink/15 rounded-full px-3 py-1">Claude API</span>
+          <span class="text-xs border border-ink/15 rounded-full px-3 py-1">Cloudflare Workers</span>
+          <span class="text-xs border border-ink/15 rounded-full px-3 py-1">HTML / JavaScript</span>
+          <span class="text-xs border border-ink/15 rounded-full px-3 py-1">Formspree</span>
+          <span class="text-xs border border-ink/15 rounded-full px-3 py-1">GitHub Pages</span>
+        </div>
+        <span class="inline-flex items-center gap-2 text-sm font-medium text-accent mt-5 group-hover:gap-3 transition-all">実際に診断してみる <i class="ph ph-arrow-right"></i></span>
+      </div>
+    </a>
+    <p class="text-sm text-muted mt-6">「自社の業務に合わせたAIツールを作りたい」というご相談も承ります。お問い合わせフォームからお気軽にどうぞ。</p>
   </section>
 
   <!-- HPおまかせセット detail -->
@@ -507,6 +538,7 @@
           <option>丸ごとお任せプラン</option>
           <option>HPおまかせセット</option>
           <option>修正代行・月額保守</option>
+          <option>AIツール開発の相談</option>
           <option>無料サンプルだけ見てみたい</option>
         </select>
       </label>
